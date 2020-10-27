@@ -1,0 +1,145 @@
+@prefix : <http://linked.data.gov.au/def/fsdf#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@base <http://linked.data.gov.au/def/fsdf> .
+
+<http://linked.data.gov.au/def/fsdf> rdf:type owl:Ontology ;
+                                owl:versionIRI <http://linked.data.gov.au/def/fsdf/1.1> ;
+                                dc:publisher "Geoscience Australia"^^xsd:string ;
+                                rdfs:comment """An ontology describing the data class-level relationships between Semantic Web versions of FSDF datasets.
+
+This ontology is an 'upper ontology' in that it serves as a high-level model for other Semantic Web-modelled datasets to map 'up' to. This is so that there is a path for testing interoperability between future FSDF Semantic Web datasets."""@en ;
+                                owl:versionInfo "This 0.5 is an early version of the ontology."@en ;
+                                dc:creator "Nicholas Car"^^xsd:string ;
+                                dct:publisher <http://pid.geoscience.gov.au/org/ga/geoscienceaustralia> ;
+                                dct:creator <http://orcid.org/0000-0002-8742-7730> ;
+                                rdfs:label "FSDF ontology"^^xsd:string ;
+                                dct:modified "2018-06-21" ;
+                                dct:publisher <http://test.linked.data.gov.au/org/O-000887> ;
+                                dct:created "2018-03-07"^^xsd:date ;
+                                vann:preferredNamespacePrefix "fsdf" ;
+                                owl:versionInfo "0.5"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/hasPart
+dct:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/dcat#Dataset
+<http://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://linked.data.gov.au/dataset/asgs
+<http://linked.data.gov.au/dataset/asgs> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/ns/dcat#Dataset> ;
+                                         owl:sameAs <https://link.fsdf.org.au/fsdf-dataset/australian-statistical-geographical-standard-boundaries> ;
+                                         dct:hasPart <http://linked.data.gov.au/def/asgs#MeshBlock> ,
+                                                     <http://linked.data.gov.au/def/asgs#State> ;
+                                         rdfs:label "Australian Statistical Geographical Standard Boundaries"^^xsd:string .
+
+
+###  http://linked.data.gov.au/dataset/geofabric-catchments
+<http://linked.data.gov.au/dataset/geofabric-catchments> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.w3.org/ns/dcat#Dataset> ;
+                                                         owl:sameAs <https://link.fsdf.org.au/fsdf-dataset/catchment-boundaries> ;
+                                                         dct:hasPart <http://linked.data.gov.au/def/geofabric#Catchment> ,
+                                                                     <http://linked.data.gov.au/def/geofabric#Waterbody> ;
+                                                         rdfs:label "Catchment Boundaries"^^xsd:string .
+
+
+###  http://linked.data.gov.au/dataset/gnaf
+<http://linked.data.gov.au/dataset/gnaf> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/ns/dcat#Dataset> ;
+                                         owl:sameAs <https://link.fsdf.org.au/fsdf-dataset/geocoded-national-address-file> ;
+                                         dct:hasPart <http://linked.data.gov.au/def/gnaf#Address> ,
+                                                     <http://linked.data.gov.au/def/gnaf#GeocodedPoint> ,
+                                                     <http://linked.data.gov.au/def/gnaf#Locality> ,
+                                                     <http://linked.data.gov.au/def/gnaf#MeshBlockMatch> ,
+                                                     <http://linked.data.gov.au/def/gnaf#StreetLocality> ;
+                                         rdfs:label "Geocoded National Address File"^^xsd:string .
+
+
+###  http://linked.data.gov.au/dataset/png
+<http://linked.data.gov.au/dataset/png> rdf:type owl:NamedIndividual ,
+                                                 <http://www.w3.org/ns/dcat#Dataset> ;
+                                        owl:sameAs <http://linked.data.gov.au/def/png#Place> ;
+                                        rdfs:label "National Gazeteer of Australia"^^xsd:string .
+
+
+###  http://linked.data.gov.au/def/asgs#MeshBlock
+<http://linked.data.gov.au/def/asgs#MeshBlock> rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/asgs#State
+<http://linked.data.gov.au/def/asgs#State> rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/geofabric#Catchment
+<http://linked.data.gov.au/def/geofabric#Catchment> rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/geofabric#Waterbody
+<http://linked.data.gov.au/def/geofabric#Waterbody> rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/gnaf#Address
+<http://linked.data.gov.au/def/gnaf#Address> rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/gnaf#GeocodedPoint
+<http://linked.data.gov.au/def/gnaf#GeocodedPoint> rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/gnaf#Locality
+<http://linked.data.gov.au/def/gnaf#Locality> rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/gnaf#MeshBlockMatch
+<http://linked.data.gov.au/def/gnaf#MeshBlockMatch> rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/gnaf#StreetLocality
+<http://linked.data.gov.au/def/gnaf#StreetLocality> rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/png#Place
+<http://linked.data.gov.au/def/png#Place> rdf:type owl:NamedIndividual .
+
+
+###  https://link.fsdf.org.au/fsdf-dataset/australian-statistical-geographical-standard-boundaries
+<https://link.fsdf.org.au/fsdf-dataset/australian-statistical-geographical-standard-boundaries> rdf:type owl:NamedIndividual .
+
+
+###  https://link.fsdf.org.au/fsdf-dataset/catchment-boundaries
+<https://link.fsdf.org.au/fsdf-dataset/catchment-boundaries> rdf:type owl:NamedIndividual .
+
+
+###  https://link.fsdf.org.au/fsdf-dataset/geocoded-national-address-file
+<https://link.fsdf.org.au/fsdf-dataset/geocoded-national-address-file> rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
