@@ -4,6 +4,7 @@ URIs denoting FSDF resources should conform to the [AGLDWG URI Conventions](http
 
 ## Initial proposal
 ### FSDF ontologies
+### Note: to clarify {theme} = 'dataset schema definition' or 'data dictionary' or 'dataset ontology'
 
 - https://linked.data.gov.au/def/{theme}
 
