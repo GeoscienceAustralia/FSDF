@@ -14,12 +14,12 @@ i.e. The URI that denotes a FSDF Ontology is just another linked.data.gov.au ont
 
 ### FSDF Codes
 
-- https://linked.data.gov.au/def/fsdf-code/{term-id}
+- https://linked.data.gov.au/def/fsdf/{term-id}
 - _or_ 
-- https://linked.data.gov.au/def/fsdf-code/{codelist-id}/{term-id} ?
+- https://linked.data.gov.au/def/fsdf/{codelist-id}/{term-id} 
 
-It is generally not considered good practice for membership in a particular list to be implied by the URI. 
-However, the URI may support a specific governance arrangement - e.g. the ability to make changes is limited to a specified URI stem 
+It is generally not considered good practice for location in a hierarchy or membership in a particular list to be implied by the URI. 
+However, the URI may support a specified governance arrangement - e.g. the ability to make changes is limited by URI stem 
 
 ### FSDF Data
 
