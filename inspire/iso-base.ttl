@@ -1,0 +1,64 @@
+# baseURI: http://def.isotc211.org/iso19150/-2/2012/base
+# prefix: iso19150-2
+
+@prefix : <http://def.isotc211.org/iso19150/-2/2012/base#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix iso19150-2: <http://def.isotc211.org/iso19150/-2/2012/base#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://def.isotc211.org/iso19150/-2/2012/base>
+  a owl:Ontology ;
+  dc:source "ISO19150-2, Rules for ontology in OWL" ;
+  rdfs:label "ISO19150-2, Rules for ontology in OWL" ;
+  owl:versionInfo "2014-07-07" ;
+.
+iso19150-2:GCOLiteral
+  a rdfs:Datatype ;
+  dc:source "http://standards.iso.org/iso/19139/ed-1/en" ;
+  owl:equivalentClass rdf:XMLLiteral ;
+  skos:prefLabel "GCOLiteral" ;
+.
+iso19150-2:aggregationType
+  a owl:AnnotationProperty ;
+  rdfs:domain owl:Class ;
+  rdfs:range xsd:string ;
+.
+iso19150-2:associationName
+  a owl:AnnotationProperty ;
+  rdfs:domain owl:Class ;
+  rdfs:range xsd:string ;
+.
+iso19150-2:constraint
+  a owl:AnnotationProperty ;
+  rdfs:domain owl:Class ;
+  rdfs:range xsd:string ;
+.
+iso19150-2:isAbstract
+  a owl:AnnotationProperty ;
+  rdfs:domain owl:Class ;
+  rdfs:range xsd:boolean ;
+.
+iso19150-2:valueAssignment
+  a owl:ObjectProperty ;
+  dc:source "http://standards.iso.org/iso/19109/ed-2/en" ;
+  rdfs:domain [
+      a owl:Restriction ;
+      owl:allValuesFrom rdf:Statement ;
+      owl:onProperty iso19150-2:valueAssignment ;
+    ] ;
+  skos:definition "property that can be attached to any statement to support a link to the evidence for the value" ;
+  skos:prefLabel "value assignment" ;
+.
+rdfs:comment
+  a owl:AnnotationProperty ;
+.
+rdfs:label
+  a owl:AnnotationProperty ;
+.
+owl:versionInfo
+  a owl:AnnotationProperty ;
+.
