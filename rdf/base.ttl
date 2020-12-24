@@ -1,0 +1,328 @@
+# baseURI: https://linked.data.gov.au/def/fsdf
+# imports: http://purl.org/dc/elements/1.1/
+
+@prefix base: <http://linked.data.gov.au/def/fsdf#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix locn: <https://www.w3.org/ns/locn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://linked.data.gov.au/def/fsdf>
+  a owl:Ontology ;
+  dcterms:created "2020-12-21"^^xsd:date ;
+  dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dcterms:modified "2020-12-24"^^xsd:date ;
+  dcterms:source "<http://inspire.ec.europa.eu/ont/base>" ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <https://www.w3.org/ns/locn.ttl> ;
+  skos:definition "schema for basic classes, types and properties used by multiple themes"@en ;
+.
+base:Contact
+  a owl:Class ;
+  rdfs:label "contact"@en ;
+  skos:definition "Communication channels by which it is possible to gain access to someone or something."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#Contact.address>
+  a owl:ObjectProperty ;
+  rdfs:domain base:Contact ;
+  rdfs:range locn:Address ;
+  rdfs:subPropertyOf locn:address ;
+  skos:definition "An address provided as free text."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#Contact.contactInstructions>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:Contact ;
+  rdfs:range rdf:langString ;
+  skos:definition "Supplementary instructions on how or when to contact an individual or organisation."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#Contact.electronicMailAddress>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:Contact ;
+  rdfs:range xsd:string ;
+  skos:definition "An address of the organisation's or individual's electronic mailbox."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#Contact.hoursOfService>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:Contact ;
+  rdfs:range rdf:langString ;
+  skos:definition "Periods of time when the organisation or individual can be contacted."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#Contact.telephoneFacsimile>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:Contact ;
+  rdfs:range xsd:string ;
+  skos:definition "Number of a facsimile machine of the organisation or individual."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#Contact.telephoneVoice>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:Contact ;
+  rdfs:range xsd:string ;
+  skos:definition "Telephone number of the organisation or individual."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#Contact.website>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:Contact ;
+  rdfs:range xsd:anyURI ;
+  skos:definition "Pages provided on the World Wide Web by the organisation or individual."@en ;
+.
+base:DocumentCitation
+  a owl:Class ;
+  rdfs:label "document citation"@en ;
+  skos:definition "Citation for the purposes of unambiguously referencing a document."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#DocumentCitation.link>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:DocumentCitation ;
+  rdfs:label "link to online version"@en ;
+  rdfs:range xsd:anyURI ;
+  skos:definition "Link to an online version of the document"@en ;
+.
+<http://linked.data.gov.au/def/fsdf#DocumentCitation.name>
+  a owl:DatatypeProperty ;
+  rdfs:comment """NOTE	For legal documents, this should be the official name assigned to the legislative instrument.
+
+EXAMPLE The official legal name for the INSPIRE Directive is \"Directive 2007/2/EC of the European Parliament and of the Council of 14 March 2007 establishing an Infrastructure for Spatial Information in the European Community (INSPIRE)\""""@en ;
+  rdfs:domain base:DocumentCitation ;
+  rdfs:label "name"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "Name of the document."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#DocumentCitation.shortName>
+  a owl:DatatypeProperty ;
+  rdfs:comment """NOTE	For legal documents, this should be a short name or alternative title commonly used to identify the legislation.
+
+EXAMPLE 1: INSPIRE Directive is the short name for \"Directive 2007/2/EC of the European Parliament and of the Council of 14 March 2007 establishing an Infrastructure for Spatial Information in the European Community (INSPIRE)\"
+
+EXAMPLE 2: CAFE Directive is the short name for the Directive 2008/50/EC of the European Parliament and of the Council of 21 May 2008 on ambient air quality and cleaner air for Europe\" 
+
+EXAMPLE  3: Water Framework Directive the short name for \"Directive 2000/60/EC of the European Parliament and of the Council establishing a framework for the Community action in the field of water policy\""""@en ;
+  rdfs:domain base:DocumentCitation ;
+  rdfs:label "short name"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "Short name or alternative title of the document."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#DocumentCitation.specificReference>
+  a owl:DatatypeProperty ;
+  rdfs:comment "EXAMPLE For legal documents, this attribute can contain a reference to article(s) that specify a specific requirement or obligation."@en ;
+  rdfs:domain base:DocumentCitation ;
+  rdfs:label "specific reference"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "Reference to a specific part of the document."@en ;
+.
+base:LegislationCitation
+  a owl:Class ;
+  rdfs:label "legislation citation"@en ;
+  rdfs:subClassOf base:DocumentCitation ;
+  skos:definition "Citation for the purposes of unambiguously referencing a legal act or a specific part of a legal act."@en ;
+  skos:scopeNote "Provide_linkToLegislativeInstrument_or_journalCitation: If the link attribute is void, the journal citation shall be provided." ;
+.
+<http://linked.data.gov.au/def/fsdf#LegislationCitation.dateEnteredIntoForce>
+  a owl:ObjectProperty ;
+  rdfs:domain base:LegislationCitation ;
+  rdfs:label "date entered into force"@en ;
+  rdfs:range xsd:date ;
+  skos:definition "Date the legislative instrument entered into force."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#LegislationCitation.dateRepealed>
+  a owl:ObjectProperty ;
+  rdfs:domain base:LegislationCitation ;
+  rdfs:label "date repealed"@en ;
+  rdfs:range xsd:date ;
+  skos:definition "Date the legislative instrument was repealed."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#LegislationCitation.identificationNumber>
+  a owl:DatatypeProperty ;
+  rdfs:comment """EXAMPLE 1: 2007/2/EC is the identification number for the INSPIRE Directive
+
+EXAMPLE 2: 2008/50/EC is the identification number for the CAFE Directive
+
+EXAMPLE 3: 2000/60/EC is the identification number for the  Water Framework Directive"""@en ;
+  rdfs:domain base:LegislationCitation ;
+  rdfs:label "identification number"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "Code used to identify the legislative instrument"@en ;
+.
+<http://linked.data.gov.au/def/fsdf#LegislationCitation.journalCitation>
+  a owl:ObjectProperty ;
+  rdfs:domain base:LegislationCitation ;
+  rdfs:label "journal citation"@en ;
+  rdfs:range base:OfficialJournalInformation ;
+  skos:definition "Citation of the official journal in which the legislation is published."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#LegislationCitation.level>
+  a owl:ObjectProperty ;
+  rdfs:domain base:LegislationCitation ;
+  rdfs:label "name"@en ;
+  rdfs:range skos:Concept ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codeList/LegislationLevelValue> ;
+  skos:definition "The level at which the legislative instrument is adopted."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#LegislationCitation.officialDocumentNumber>
+  a owl:DatatypeProperty ;
+  rdfs:comment """NOTE: An official document number may be assigned to uniquely identify the legislative instrument.
+
+EXAMPLE: CELEX Number used to uniquely identify European Union Legislation"""@en ;
+  rdfs:domain base:LegislationCitation ;
+  rdfs:label "official document number"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "Official document number used to uniquely identify the legislative instrument."@en ;
+.
+base:Measure
+  a rdfs:Datatype ;
+  skos:changeNote "This has been changed from the INSPIRE formulation, which used a text-literal with a space separating the number from the unit. " ;
+  skos:definition "a scaled quantity. A decimal value with datatype ^^unit:ucumcode" ;
+  skos:example """
+  \"1.76\"^^unit:m
+  \"40.0\"^^unit:wk
+  \"60.0\"^^unit:km.h-1
+  \"82.0\"^^unit:kg
+  """ ;
+  skos:notation "Measure"^^xsd:NCName ;
+  skos:prefLabel "measure"@en ;
+.
+base:OfficialJournalInformation
+  a owl:Class ;
+  rdfs:label "official journal information"@en ;
+  skos:definition "Full citation of the location of the legislative instrument within the official journal."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#OfficialJournalInformation.iSBN>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:OfficialJournalInformation ;
+  rdfs:label "ISBN"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "International Standard Book Number (ISBN) is an nine-digit number that uniquely identifies the book in which the legislative instrument was published."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#OfficialJournalInformation.iSSN>
+  a owl:DatatypeProperty ;
+  rdfs:comment """NOTE: Periodical publilcations are issued in successive parts, usually having numerical or chronological designations and required that each serial publication can be uniquely identified.
+
+EXAMPLE: OJ Series in which INSPIRE Directive is published has been assigned the ISSN: 1725-2555"""@en ;
+  rdfs:domain base:OfficialJournalInformation ;
+  rdfs:label "ISSN"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "The International Standard Serial Number (ISSN) is an eight-digit number that identifies the periodical publication in which the legislative instrument was published."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#OfficialJournalInformation.linkToJournal>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:OfficialJournalInformation ;
+  rdfs:label "link to online version"@en ;
+  rdfs:range xsd:anyURI ;
+  skos:definition "Link to an online version of the official journal"@en ;
+.
+<http://linked.data.gov.au/def/fsdf#OfficialJournalInformation.officialJournalIdentification>
+  a owl:DatatypeProperty ;
+  rdfs:comment "EXAMPLE: Official Journal of European Union (OJEU), L108, Volume 50, 1-14"@en ;
+  rdfs:domain base:OfficialJournalInformation ;
+  rdfs:label "official journal identification"@en ;
+  rdfs:range xsd:string ;
+  skos:definition """Reference to the location within the official journal within which the legislative instrument was published. This reference shall be comprised of three parts:
+<ul>
+	<li>the title of the official journal</li>
+	<li>the volume and/or series number</li>
+	<li>Page number(s)</li>
+</ul>"""@en ;
+.
+base:RelatedParty
+  a owl:Class ;
+  rdfs:comment "NOTE 1 A party, typically an individual person, acting as a general point of contact for a resource can be specified without providing any particular role."@en ;
+  rdfs:label "related party"@en ;
+  skos:definition "An organisation or a person with a role related to a resource."@en ;
+  skos:scopeNote "individual, organisation or position name shall be provided: At least the individual, organisation or position name shall be provided." ;
+.
+<http://linked.data.gov.au/def/fsdf#RelatedParty.contact>
+  a owl:ObjectProperty ;
+  rdfs:domain base:RelatedParty ;
+  rdfs:label "contact"@en ;
+  rdfs:range base:Contact ;
+  skos:definition "Contact information for the related party."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#RelatedParty.individualName>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:RelatedParty ;
+  rdfs:label "individual name"@en ;
+  rdfs:range rdf:langString ;
+  skos:definition "Name of the related person."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#RelatedParty.organisationName>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:RelatedParty ;
+  rdfs:label "organisation name"@en ;
+  rdfs:range rdf:langString ;
+  skos:definition "Name of the related organisation."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#RelatedParty.positionName>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:RelatedParty ;
+  rdfs:label "position name"@en ;
+  rdfs:range rdf:langString ;
+  skos:definition "Position of the party in relation to a resource, such as head of department."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#RelatedParty.role>
+  a owl:ObjectProperty ;
+  rdfs:domain base:RelatedParty ;
+  rdfs:range skos:Concept ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codeList/PartyRoleValue> ;
+  skos:definition "Role(s) of the party in relation to a resource, such as owner."@en ;
+.
+base:Sign
+  a rdfs:Datatype ;
+  owl:oneOf (
+      "+"
+      "-"
+    ) ;
+  skos:notation "Sign"^^xsd:NCName ;
+  skos:prefLabel "sign"@en ;
+.
+base:ThematicIdentifier
+  a owl:Class ;
+  rdfs:comment """Some spatial objects may be assigned multiple unique identifiers. 
+These may have been established to meet data exchange requirements of different reporting obligations at International, European or national levels and/or internal data maintenance requirements."""@en ;
+  rdfs:label "thematic identifier"@en ;
+  skos:definition "Thematic identifier to uniquely identify the spatial object."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#ThematicIdentifier.identifier>
+  a owl:DatatypeProperty ;
+  rdfs:domain base:ThematicIdentifier ;
+  rdfs:label "identifier"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "Unique identifier used to identify the spatial object within the specified identification scheme."@en ;
+.
+<http://linked.data.gov.au/def/fsdf#ThematicIdentifier.identifierScheme>
+  a owl:DatatypeProperty ;
+  rdfs:comment """NOTE 1: Reporting requirements for different environmental legislation mandate that each spatial object is assigned an identifier conforming to specific lexical rules. 
+
+NOTE 2: These rules are often inconsistent so a spatial object may be assigned multiple identifiers which are used for object referencing to link information to the spatial object."""@en ;
+  rdfs:domain base:ThematicIdentifier ;
+  rdfs:label "identifier scheme"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "Identifier defining the scheme used to assign the identifier."@en ;
+.
+base:beginLifespanVersion
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:dateTime ;
+  skos:definition "Date and time at which this version of the spatial object was inserted or changed in the spatial data set."@en ;
+.
+base:endLifespanVersion
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:dateTime ;
+  skos:definition "Date and time at which this version of the spatial object was superseded or retired in the spatial data set."@en ;
+.
+base:validFrom
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:dateTime ;
+  skos:definition "Date and time at which this version of the spatial object was/will be valid."@en ;
+.
+base:validTo
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:dateTime ;
+  skos:definition "Date and time at which this version of the spatial object ceased or will cease to be valid."@en ;
+.
+<https://linked.data.gov.au/def/fsdf>
+  a owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+.

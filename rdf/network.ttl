@@ -1,23 +1,21 @@
 # baseURI: http://linked.data.gov.au/def/network
+# imports: http://linked.data.gov.au/def/fsdf
 # imports: http://purl.org/dc/terms/
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.opengis.net/ont/sf
 # imports: http://www.w3.org/2004/02/skos/core
-# imports: https://www.w3.org/ns/locn.ttl
+# imports: https://linked.data.gov.au/def/fsdf
 
-@prefix base: <http://inspire.ec.europa.eu/ont/base#> .
+@prefix base: <http://linked.data.gov.au/def/fsdf#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix gn: <http://inspire.ec.europa.eu/ont/gn#> .
-@prefix iso19150-2: <http://def.isotc211.org/iso19150/-2/2012/base#> .
-@prefix locn: <https://www.w3.org/ns/locn#> .
-@prefix net: <http://inspire.ec.europa.eu/ont/net#> .
 @prefix network: <http://linked.data.gov.au/def/network/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pn: <http://linked.data.gov.au/def/placenames/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sfowl: <http://www.opengis.net/ont/sf#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -26,22 +24,22 @@
   dcterms:contributor <https://orcid.org/0000-0002-4643-7289> ;
   dcterms:created "2020-11-30"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
-  dcterms:description "Generic network ontology for FSDF. To be used as the basis for various FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Electricity distribution grid, ..." ;
+  dcterms:description "Generic network ontology for FSDF. To be used as the basis for various FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Electricity distribution grid. Adapted from http://inspire.ec.europa.eu/ont/net ." ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2020-12-01"^^xsd:date ;
+  dcterms:modified "2020-12-24"^^xsd:date ;
   dcterms:source "<http://inspire.ec.europa.eu/ont/net>" ;
+  owl:imports <http://linked.data.gov.au/def/fsdf> ;
   owl:imports dcterms: ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.opengis.net/ont/sf> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports <https://www.w3.org/ns/locn.ttl> ;
+  owl:imports <https://linked.data.gov.au/def/fsdf> ;
 .
 network:CrossReference
   a owl:Class ;
   rdfs:comment "The cross reference may represent the case where two elements are different representations of the same spatial object."@en ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/CrossReference> ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:CrossReference ;
   skos:definition "Represents a reference between two elements in the same network."@en ;
 .
 <http://linked.data.gov.au/def/network/CrossReference.element>
@@ -53,7 +51,6 @@ network:CrossReference
 .
 network:DirectedLink
   a owl:Class ;
-  owl:equivalentClass net:DirectedLink ;
   skos:definition "A link either in its positive or negative direction."@en ;
 .
 <http://linked.data.gov.au/def/network/DirectedLink.direction>
@@ -72,11 +69,10 @@ network:DirectedLink
 .
 network:GeneralisedLink
   a owl:Class ;
-  iso19150-2:isAbstract true ;
+  rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/GeneralisedLink> ;
   rdfs:subClassOf network:NetworkElement ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:GeneralisedLink ;
   skos:definition "Abstract base type representing a linear network element that may be used as a target in linear referencing."@en ;
 .
 network:GradeSeparatedCrossing
@@ -87,7 +83,6 @@ NOTE 2 In the normal case this is when elements intersect in the x/y-plane when 
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/GradeSeparatedCrossing> ;
   rdfs:subClassOf network:NetworkElement ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:GradeSeparatedCrossing ;
   skos:definition "Indicator which of two or more intersecting elements is/are below and which is/are above, to be used if elevation coordinates are not present or cannot be trusted."@en ;
 .
 <http://linked.data.gov.au/def/network/GradeSeparatedCrossing.element>
@@ -99,19 +94,17 @@ NOTE 2 In the normal case this is when elements intersect in the x/y-plane when 
 .
 network:Link
   a owl:Class ;
-  iso19150-2:isAbstract true ;
+  rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/Link> ;
   rdfs:subClassOf network:GeneralisedLink ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:Link ;
   skos:definition "Curvilinear network element that connects two positions and represents a homogeneous path in the network. The connected positions may be represented as nodes."@en ;
 .
 <http://linked.data.gov.au/def/network/Link.centrelineGeometry>
   a owl:ObjectProperty ;
   rdfs:domain network:Link ;
-  rdfs:range sfowl:LineString ;
+  rdfs:range sf:LineString ;
   rdfs:subPropertyOf geo:hasDefaultGeometry ;
-  rdfs:subPropertyOf locn:geometry ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Link.centrelineGeometry> ;
   skos:definition "The geometry that represents the centreline of the link."@en ;
 .
@@ -138,11 +131,10 @@ network:Link
 .
 network:LinkReference
   a owl:Class ;
-  iso19150-2:constraint """Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
+  rdfs:comment """Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
 inv: element.oclIsKindOf(GeneralisedLink)
 """ ;
   rdfs:subClassOf network:NetworkReference ;
-  owl:equivalentClass net:LinkReference ;
   skos:definition "A network reference to a linear network element."@en ;
 .
 <http://linked.data.gov.au/def/network/LinkReference.applicableDirection>
@@ -158,12 +150,11 @@ In cases where a property does not apply <i>to</i> a direction along a link, but
 .
 network:LinkSequence
   a owl:Class ;
-  iso19150-2:isAbstract true ;
   rdfs:comment "EXAMPLE A link sequence may represent a route."@en ;
+  rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/LinkSequence> ;
   rdfs:subClassOf network:GeneralisedLink ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:LinkSequence ;
   skos:definition "A network element which represents a continuous path in the network without any branches. The element has a defined beginning and end and every position on the link sequence is identifiable with one single parameter such as length."@en ;
 .
 <http://linked.data.gov.au/def/network/LinkSequence.link>
@@ -175,14 +166,13 @@ network:LinkSequence
 .
 network:LinkSet
   a owl:Class ;
-  iso19150-2:isAbstract true ;
   rdfs:comment """NOTE This spatial object type supports the aggregation of links to form objects with branches, loops, parallel sequences of links, gaps, etc.
 
 EXAMPLE A dual carriageway road, as a collection of the two link sequences that represent each carriageway."""@en ;
+  rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/LinkSet> ;
   rdfs:subClassOf network:NetworkElement ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:LinkSet ;
   skos:definition "A collection of link sequences and/or individual links that has a specific function or significance in a network."@en ;
 .
 <http://linked.data.gov.au/def/network/LinkSet.link>
@@ -197,7 +187,6 @@ network:Network
   rdfs:comment "The reason for collecting certain elements in a certain network may vary (e.g. connected elements for the same mode of transport)"@en ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/Network> ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:Network ;
   skos:definition "A network is a collection of network elements."@en ;
 .
 <http://linked.data.gov.au/def/network/Network.elements>
@@ -210,37 +199,33 @@ network:Network
 <http://linked.data.gov.au/def/network/Network.geographicalName>
   a owl:ObjectProperty ;
   rdfs:domain network:Network ;
-  rdfs:range gn:GeographicalName ;
-  rdfs:subPropertyOf locn:geographicName ;
+  rdfs:range pn:PlaceName ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Network.geographicalName> ;
   skos:definition "Geographical name for this network."@en ;
 .
 network:NetworkArea
   a owl:Class ;
-  iso19150-2:isAbstract true ;
+  rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkArea> ;
   rdfs:subClassOf network:NetworkElement ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:NetworkArea ;
   skos:definition "A 2-dimensional element in a network."@en ;
 .
 <http://linked.data.gov.au/def/network/NetworkArea.geometry>
   a owl:ObjectProperty ;
   rdfs:domain network:NetworkArea ;
-  rdfs:range sfowl:Polygon ;
+  rdfs:range sf:Polygon ;
   rdfs:subPropertyOf geo:hasDefaultGeometry ;
-  rdfs:subPropertyOf locn:geometry ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#NetworkArea.geometry> ;
   skos:definition "Represents the geometric properties of the area"@en ;
 .
 network:NetworkConnection
   a owl:Class ;
-  iso19150-2:constraint "Elements in different networks: /*  All elements have to be in different networks */" ;
+  rdfs:comment "Elements in different networks: /*  All elements have to be in different networks */" ;
   rdfs:comment "In the case where the networks are in different spatial data sets, a network connection object may exist in both data sets."@en ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkConnection> ;
   rdfs:subClassOf network:NetworkElement ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:NetworkConnection ;
   skos:definition "Represents a logical connection between two or more network elements in different networks."@en ;
 .
 <http://linked.data.gov.au/def/network/NetworkConnection.element>
@@ -260,10 +245,9 @@ network:NetworkConnection
 .
 network:NetworkElement
   a owl:Class ;
-  iso19150-2:isAbstract true ;
+  rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkElement> ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:NetworkElement ;
   skos:definition "Abstract base type representing an element in a network. Every element in a network provides some function that is of interest in the network."@en ;
 .
 <http://linked.data.gov.au/def/network/NetworkElement.inNetwork>
@@ -275,11 +259,10 @@ network:NetworkElement
 .
 network:NetworkProperty
   a owl:Class ;
-  iso19150-2:isAbstract true ;
   rdfs:comment "In the simplest case (NetworkReference), the network property applies to the whole network element. In the case of a Link, the spatial reference may be restricted to part of the Link by using a linear reference. ISO/TC 211 is currently in the early stages of developing a standard for Linear Referencing (ISO 19148). A simple mechanism to express linear references is provided in this version of the network model; it is expected that the model will be extended once ISO 19148 is stable. The current simple model requires for all linear references two expressions representing a distance from the start of the Link along its curve geometry. The network property applies to the part of the Link between fromPosition and toPosition."@en ;
+  rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkProperty> ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:NetworkProperty ;
   skos:definition "Abstract base type representing phenomena located at or along a network element. This base type provides general properties to associate the network-related phenomena (network properties) with the network elements."@en ;
 .
 <http://linked.data.gov.au/def/network/NetworkProperty.networkRef>
@@ -292,7 +275,6 @@ network:NetworkProperty
 .
 network:NetworkReference
   a owl:Class ;
-  owl:equivalentClass net:NetworkReference ;
   skos:definition "A reference to a network element."@en ;
 .
 <http://linked.data.gov.au/def/network/NetworkReference.element>
@@ -304,20 +286,18 @@ network:NetworkReference
 .
 network:Node
   a owl:Class ;
-  iso19150-2:isAbstract true ;
   rdfs:comment "NOTE if a topological representation of the network is used the road node is either a topological connection between two or more links or the termination of a ink. If a geometric representation of the network is used road nodes are represented by points or alternatively another geometric shape. [EuroRoadS]"@en ;
+  rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/Node> ;
   rdfs:subClassOf network:NetworkElement ;
   rdfs:subClassOf geo:Feature ;
-  owl:equivalentClass net:Node ;
   skos:definition "Represents a significant position in the network that always occurs at the beginning or the end of a link."@en ;
 .
 <http://linked.data.gov.au/def/network/Node.geometry>
   a owl:ObjectProperty ;
   rdfs:domain network:Node ;
-  rdfs:range sfowl:Point ;
+  rdfs:range sf:Point ;
   rdfs:subPropertyOf geo:hasDefaultGeometry ;
-  rdfs:subPropertyOf locn:geometry ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Node.geometry> ;
   skos:definition "The location of the node."@en ;
 .
@@ -339,11 +319,10 @@ network:Node
 .
 network:SimpleLinearReference
   a owl:Class ;
-  iso19150-2:constraint """Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
+  rdfs:comment """Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
 inv: element.oclIsKindOf(GeneralisedLink)
 """ ;
   rdfs:subClassOf network:LinkReference ;
-  owl:equivalentClass net:SimpleLinearReference ;
   skos:definition "A network reference that is restricted to part of a linear network element. The part is the part of the network element between fromPosition and toPosition."@en ;
 .
 <http://linked.data.gov.au/def/network/SimpleLinearReference.fromPosition>
@@ -362,11 +341,10 @@ inv: element.oclIsKindOf(GeneralisedLink)
 .
 network:SimplePointReference
   a owl:Class ;
-  iso19150-2:constraint """Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
+  rdfs:comment """Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
 inv: element.oclIsKindOf(GeneralisedLink)
 """ ;
   rdfs:subClassOf network:LinkReference ;
-  owl:equivalentClass net:SimplePointReference ;
   skos:definition "A network reference that is restricted to a point on a linear network element. The point is the location on the network element at the position atPosition along the network."@en ;
 .
 <http://linked.data.gov.au/def/network/SimplePointReference.atPosition>
@@ -379,6 +357,5 @@ inv: element.oclIsKindOf(GeneralisedLink)
 network:offset
   a owl:DatatypeProperty ;
   rdfs:range base:Measure ;
-  owl:equivalentProperty net:offset ;
   skos:definition "An offset from the centerline geometry of the generalised link, where applicable; a positive offset is to the right in the direction of the link, a negative offset is to the left."@en ;
 .
