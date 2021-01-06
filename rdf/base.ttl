@@ -1,9 +1,10 @@
-# baseURI: https://linked.data.gov.au/def/fsdf
-# imports: http://purl.org/dc/elements/1.1/
+# baseURI: http://linked.data.gov.au/def/fsdf
+# imports: http://purl.org/dc/terms/
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: base
 
 @prefix base: <http://linked.data.gov.au/def/fsdf#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix locn: <https://www.w3.org/ns/locn#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -19,8 +20,13 @@
   dcterms:source "<http://inspire.ec.europa.eu/ont/base>" ;
   owl:imports dcterms: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports <https://www.w3.org/ns/locn.ttl> ;
   skos:definition "schema for basic classes, types and properties used by multiple themes"@en ;
+  owl:imports <http://purl.org/dc/terms/> ;
+.
+base:Address
+  a rdfs:Datatype ;
+  rdfs:label "address"@en ;
+  skos:definition "An address provided as free text"@en ;
 .
 base:Contact
   a owl:Class ;
@@ -30,8 +36,8 @@ base:Contact
 <http://linked.data.gov.au/def/fsdf#Contact.address>
   a owl:ObjectProperty ;
   rdfs:domain base:Contact ;
-  rdfs:range locn:Address ;
-  rdfs:subPropertyOf locn:address ;
+  rdfs:range base:Address ;
+  rdfs:comment "rdfs:subPropertyOf locn:address" ;
   skos:definition "An address provided as free text."@en ;
 .
 <http://linked.data.gov.au/def/fsdf#Contact.contactInstructions>
@@ -321,8 +327,4 @@ base:validTo
   a owl:DatatypeProperty ;
   rdfs:range xsd:dateTime ;
   skos:definition "Date and time at which this version of the spatial object ceased or will cease to be valid."@en ;
-.
-<https://linked.data.gov.au/def/fsdf>
-  a owl:Ontology ;
-  owl:imports <http://purl.org/dc/elements/1.1/> ;
 .

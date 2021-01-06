@@ -4,7 +4,6 @@
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.opengis.net/ont/sf
 # imports: http://www.w3.org/2004/02/skos/core
-# imports: https://linked.data.gov.au/def/fsdf
 
 @prefix base: <http://linked.data.gov.au/def/fsdf#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -33,7 +32,7 @@
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.opengis.net/ont/sf> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports <https://linked.data.gov.au/def/fsdf> ;
+  owl:imports <http://linked.data.gov.au/def/fsdf> ;
 .
 network:CrossReference
   a owl:Class ;
