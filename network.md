@@ -1,6 +1,10 @@
 # FSDF network ontology
 
-The [FSDF network ontology](rdf/network.ttl) is a generic network model which may be used as the basis of the various network-oriented models (air-transport, hydrology, roads, ...)
+The [FSDF network ontology](rdf/network.ttl) is a generic network model which may be used as the basis of the various network-oriented models (pipelines, powerlines, hydrology, roads, ...)
+
+The [FSDF network ontology](rdf/network.ttl) is summarized in this figure: 
+
+![FSDF Network ontology](images/FSDF-net-ontology.png)
 
 The FSDF network ontology has been adapted from the INSPIRE Generic Network model:
 
@@ -13,7 +17,3 @@ In the [FSDF network ontology](rdf/network.ttl) the following simplifications ar
 - simplify property-names by removing the class-names, and merging predicates with the same semantics
 - remove some global (domain) constraints on properties
 - add local constraints to class definitions to match the UML model
-
-The [FSDF network ontology](rdf/network.ttl) is summarized in this figure: 
-
-![FSDF Network ontology](images/FSDF-net-ontology.png)
