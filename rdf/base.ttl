@@ -1,9 +1,8 @@
-# baseURI: http://linked.data.gov.au/def/fsdf
+# baseURI: http://linked.data.gov.au/def/fsdf-base
 # imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
-# prefix: base
 
-@prefix base: <http://linked.data.gov.au/def/fsdf#> .
+@prefix base: <http://linked.data.gov.au/def/fsdf-base/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix locn: <https://www.w3.org/ns/locn#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -12,16 +11,16 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://linked.data.gov.au/def/fsdf>
+<http://linked.data.gov.au/def/fsdf-base>
   a owl:Ontology ;
   dcterms:created "2020-12-21"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:description "schema for basic classes, types and properties used by multiple FSDF themes. Adapted from http://inspire.ec.europa.eu/ont/base"@en ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:modified "2021-01-06"^^xsd:date ;
-  dcterms:source "<http://inspire.ec.europa.eu/ont/base>" ;
+  dcterms:source "<https://raw.githubusercontent.com/inspire-eu-rdf/inspire-rdf-vocabularies/master/base/base.ttl>" ;
   owl:imports dcterms: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  skos:definition "schema for basic classes, types and properties used by multiple themes"@en ;
 .
 base:Contact
   a owl:Class ;

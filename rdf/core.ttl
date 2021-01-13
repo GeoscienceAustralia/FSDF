@@ -1,0 +1,145 @@
+# baseURI: http://linked.data.gov.au/def/fsdf-core
+# imports: http://linked.data.gov.au/def/fsdf-base
+
+@prefix base: <http://linked.data.gov.au/def/fsdf-base/> .
+@prefix core: <http://linked.data.gov.au/def/fsdf-core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix net: <http://linked.data.gov.au/def/fsdf-network/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pn: <http://linked.data.gov.au/def/placenames/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://linked.data.gov.au/def/fsdf-core>
+  a owl:Ontology ;
+  dcterms:created "2021-01-13" ;
+  dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:description "A small ontology for the 'core' properties of FSDF Features" ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dcterms:title "FSDF core feature ontology" ;
+  owl:imports <http://linked.data.gov.au/def/fsdf-base> ;
+.
+core:Feature
+  a owl:Class ;
+  rdfs:label "FSDF Feature (core attributes)" ;
+  rdfs:subClassOf geo:Feature ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty core:featureSource ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty core:name ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty core:operationalStatus ;
+    ] ;
+.
+core:attributeDate
+  a owl:DatatypeProperty ;
+  dcterms:description "This is the date of the latest primary source material used to initially assign, or subsequently change or confirm the value of, one of the attributes of the feature." ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Attribute Date" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+core:attributeSource
+  a owl:ObjectProperty ;
+  dcterms:description "This is the name of the latest primary source material used to populate the attribute field/s of a feature." ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Attribute Source" ;
+  rdfs:subPropertyOf dcterms:source ;
+.
+core:custodianAgency
+  a owl:ObjectProperty ;
+  dcterms:description "The agency or organisation for the source of this feature" ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Custodian Agency" ;
+  rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+.
+core:custodianLicensing
+  a owl:ObjectProperty ;
+  dcterms:description "Specific licensing relating to this feature" ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Custodian Licensing" ;
+  rdfs:subPropertyOf dcterms:license ;
+.
+core:featureDate
+  a owl:DatatypeProperty ;
+  dcterms:description "This is the date of the latest primary source material where the position of a particular feature was added, verified, or subsequently changed." ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Feature Date" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+core:featureSource
+  a owl:ObjectProperty ;
+  dcterms:description "This is the name of the latest primary source used to add, update or verify a features existence or position. In most cases, this would be imagery (satellite, orthophotography, World Imagery)." ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Feature Source" ;
+  rdfs:subPropertyOf dcterms:source ;
+.
+core:featureSubType
+  a owl:ObjectProperty ;
+  dcterms:description "An identifier for the type of feature represented" ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Feature sub-type" ;
+  rdfs:subPropertyOf dcterms:type ;
+.
+core:loadingDate
+  a owl:DatatypeProperty ;
+  dcterms:description "Date of data loaded into national model" ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Loading Date" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+core:name
+  a owl:DatatypeProperty ;
+  dcterms:description "The name of the feature" ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Name" ;
+  rdfs:subPropertyOf rdfs:label ;
+.
+core:operationalStatus
+  a owl:ObjectProperty ;
+  dcterms:description " The Operational status of the feature" ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Operational Status" ;
+  rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+.
+core:planimetricAccuracy
+  a owl:DatatypeProperty ;
+  dcterms:description "The standard deviation of the horizontal positional accuracy" ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Planimetric Accuracy" ;
+  rdfs:range base:Measure ;
+.
+core:sourceJurisdiction
+  a owl:ObjectProperty ;
+  dcterms:description "The jurisdiction of the source feature" ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Source Jurisdiction" ;
+  rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+.
+core:sourceUFI
+  a owl:DatatypeProperty ;
+  dcterms:description "The unique identifier of the feature as represented in the source " ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Source UFI" ;
+  rdfs:subPropertyOf dcterms:identifier ;
+.
+core:verticalAccuracy
+  a owl:DatatypeProperty ;
+  dcterms:description "The standard deviation of the vertical positional accuracy" ;
+  rdfs:domain core:Feature ;
+  rdfs:label "Vertical Accuracy" ;
+  rdfs:range base:Measure ;
+.

@@ -1,15 +1,16 @@
-# baseURI: http://linked.data.gov.au/def/network
-# imports: http://linked.data.gov.au/def/fsdf
+# baseURI: http://linked.data.gov.au/def/fsdf-network
+# imports: http://linked.data.gov.au/def/fsdf-base
 # imports: http://purl.org/dc/terms/
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.opengis.net/ont/sf
 # imports: http://www.w3.org/2004/02/skos/core
 
-@prefix base: <http://linked.data.gov.au/def/fsdf#> .
+@prefix base: <http://linked.data.gov.au/def/fsdf-base/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix net: <http://linked.data.gov.au/def/network/> .
+@prefix my: <http://example.org/idtype/> .
+@prefix net: <http://linked.data.gov.au/def/fsdf-network/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pn: <http://linked.data.gov.au/def/placenames/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -18,16 +19,20 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://linked.data.gov.au/def/network>
+my:Resource99
+  a my:Class88 ;
+  dcterms:identifier "id2"^^my:typeB ;
+.
+<http://linked.data.gov.au/def/fsdf-network>
   a owl:Ontology ;
   dcterms:contributor <https://orcid.org/0000-0002-4643-7289> ;
   dcterms:created "2020-11-30"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
-  dcterms:description "Generic network ontology for FSDF. To be used as the basis for various FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Electricity distribution grid. Adapted from http://inspire.ec.europa.eu/ont/net ." ;
+  dcterms:description "Generic network ontology for FSDF. To be used as the basis for FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Powerlines. Adapted from http://inspire.ec.europa.eu/ont/net ." ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:modified "2021-01-06"^^xsd:date ;
-  dcterms:source "<http://inspire.ec.europa.eu/ont/net>" ;
-  owl:imports <http://linked.data.gov.au/def/fsdf> ;
+  dcterms:source "<https://raw.githubusercontent.com/inspire-eu-rdf/inspire-rdf-vocabularies/master/net/net.ttl>" ;
+  owl:imports <http://linked.data.gov.au/def/fsdf-base> ;
   owl:imports dcterms: ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.opengis.net/ont/sf> ;
@@ -49,7 +54,7 @@ net:DirectedLink
   a owl:Class ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom base:Sign ;
+      owl:allValuesFrom <http://linked.data.gov.au/def/fsdf-base#Sign> ;
       owl:onProperty net:direction ;
     ] ;
   rdfs:subClassOf [
@@ -229,13 +234,13 @@ net:NetworkElement
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty base:identifier ;
+      owl:onProperty <http://linked.data.gov.au/def/fsdf-base#identifier> ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:dateTime ;
-      owl:onProperty base:endLifespanVersion ;
+      owl:onProperty <http://linked.data.gov.au/def/fsdf-base#endLifespanVersion> ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -244,7 +249,7 @@ net:NetworkElement
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onProperty base:beginLifespanVersion ;
+      owl:onProperty <http://linked.data.gov.au/def/fsdf-base#beginLifespanVersion> ;
       owl:someValuesFrom xsd:dateTime ;
     ] ;
   skos:definition "Abstract base type representing an element in a network. Every element in a network provides some function that is of interest in the network."@en ;
@@ -315,7 +320,7 @@ In cases where a property does not apply <i>to</i> a direction along a link, but
 net:atPosition
   a owl:DatatypeProperty ;
   rdfs:domain net:SimplePointReference ;
-  rdfs:range base:Measure ;
+  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Measure> ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#SimplePointReference.atPosition> ;
   skos:definition "Position of the point, expressed as the distance from the start of the linear network element along its curve geometry."@en ;
 .
@@ -330,7 +335,7 @@ net:centrelineGeometry
 net:direction
   a owl:DatatypeProperty ;
   rdfs:domain net:DirectedLink ;
-  rdfs:range base:Sign ;
+  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Sign> ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#DirectedLink.direction> ;
   skos:definition "Indicates if the directed link agrees (positive) or disagrees (negative) with the positive direction of the link."@en ;
 .
@@ -375,7 +380,7 @@ net:fictitious
 net:fromPosition
   a owl:DatatypeProperty ;
   rdfs:domain net:SimpleLinearReference ;
-  rdfs:range base:Measure ;
+  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Measure> ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#SimpleLinearReference.fromPosition> ;
   skos:definition "The start position of the linear element, expressed as the distance from the start of the linear network element along its curve geometry."@en ;
 .
@@ -436,7 +441,7 @@ net:networkRef
 .
 net:offset
   a owl:DatatypeProperty ;
-  rdfs:range base:Measure ;
+  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Measure> ;
   skos:definition "An offset from the centerline geometry of the generalised link, where applicable; a positive offset is to the right in the direction of the link, a negative offset is to the left."@en ;
 .
 net:spokeEnd
@@ -465,7 +470,7 @@ net:startNode
 net:toPosition
   a owl:DatatypeProperty ;
   rdfs:domain net:SimpleLinearReference ;
-  rdfs:range base:Measure ;
+  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Measure> ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#SimpleLinearReference.toPosition> ;
   skos:definition "The end position of the linear element, expressed as the distance from the start of the linear network element along its curve geometry."@en ;
 .
