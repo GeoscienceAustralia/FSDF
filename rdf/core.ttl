@@ -1,5 +1,6 @@
 # baseURI: http://linked.data.gov.au/def/fsdf-core
 # imports: http://linked.data.gov.au/def/fsdf-base
+# imports: http://www.opengis.net/ont/geosparql
 
 @prefix base: <http://linked.data.gov.au/def/fsdf-base/> .
 @prefix core: <http://linked.data.gov.au/def/fsdf-core/> .
@@ -21,6 +22,7 @@
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:title "FSDF core feature ontology" ;
   owl:imports <http://linked.data.gov.au/def/fsdf-base> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
 .
 core:Feature
   a owl:Class ;
