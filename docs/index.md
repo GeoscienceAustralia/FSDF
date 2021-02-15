@@ -1,7 +1,5 @@
 
-![Geoscience Australia](./images/GA.jpg)
-
-### Applying geoscience to Australia's most important challenges
+![Geoscience Australia](./images/GA.jpg) ### Applying geoscience to Australia's most important challenges
 
 ![Geoscience Australia](./images/lo.jpg)
   
