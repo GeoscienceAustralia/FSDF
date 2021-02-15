@@ -1,5 +1,3 @@
-# FSDF Home
-
 This repository consists of some of the datasets in the Foundation Base program.
 
 These datasets are categoriezed in five themes. By clicking a dataset name, its linked data API can be accessed.  
