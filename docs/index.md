@@ -3,6 +3,30 @@
 
 ![Geoscience Australia](./images/lo.jpg)
   
+<header>
+    <div id="header">
+      <table>
+        <tr>
+          <td>
+            <img id="ga-logo" src="{{ url_for('static', filename = 'ga-logo.jpg') }}" />
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td id="quote">
+                  <span id="quote">Applying geoscience to Australia's most important challenges</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <div id="ga-colour-strip-container">
+        <img id="ga-colour-strip" src="{{ url_for('static', filename = 'lo.jpg') }}" />
+      </div>
+    </div>
+
+</header>
 
 This repository consists of some of the datasets in the Foundation Base program.
 
