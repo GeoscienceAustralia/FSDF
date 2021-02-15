@@ -4,52 +4,52 @@ This repository consists of some of the datasets in the Foundation Base program.
 
 These datasets are categoriezed in five themes. By clicking a dataset name, its linked data API can be accessed.  
 
-1. Place Names:
+## 1. Place Names:
 
-[Place Names] (https://linked.data.gov.au/dataset/placenames)
+- [Place Names](https://linked.data.gov.au/dataset/placenames)
 
-2. Physical Infrastructure:
+## 2. Physical Infrastructure:
  
-[Powerlines] (http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_lines)
+- [Powerlines](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_lines)
 
-[Power Stations] (http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_stations)
+- [Power Stations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_stations)
 
-[Power Substations] (http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_substations)
+- [Power Substations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_substations)
 
-[Pipelines]
+- Pipelines
 
-[Waste Managements]
+- Waste Managements
 
-[Waste Water Treatments]
+- Waste Water Treatments
 
-3. Transport
+## 3. Transport
 
-[Railways]
+- Railways
 
-[Airports]
+- Airports
 
-[Helipads]
+- Helipads
 
-[Runways]
+- Runways
 
-[Tunnels]
+- Tunnels
 
-[Bridges]
+- Bridges
 
-[Roads]
+- Roads
 
-[Landing Grounds]
+- Landing Grounds
 
-[Railway Stations]
+- Railway Stations
 
-4. Building and Settlement
+## 4. Building and Settlement
 
-- [Hospitals]
+- Hospitals
 
-- [Emergency Management Facilities]
+- Emergency Management Facilities
 
-5. Elevation
+## 5. Elevation
 
-[ELVIS]
+- ELVIS
 
 
