@@ -8,7 +8,7 @@
       <table>
         <tr>
           <td>
-            <img id="ga-logo" src="{{ url_for('images', filename = 'ga.jpg') }}" />
+            <img id="ga-logo" src="{{ url_for('images', filename = 'GA.jpg') }}" />
           </td>
           <td>
             <table>
