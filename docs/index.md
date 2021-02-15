@@ -1,5 +1,5 @@
 
-![Geoscience Australia](./images/GA.jpg) ### Applying geoscience to Australia's most important challenges
+![Geoscience Australia](./images/GA.jpg)  Applying geoscience to Australia's most important challenges
 
 ![Geoscience Australia](./images/lo.jpg)
   
@@ -8,7 +8,7 @@
       <table>
         <tr>
           <td>
-            <img id="ga-logo" src="{{ url_for('static', filename = 'ga-logo.jpg') }}" />
+            <img id="ga-logo" src="{{ url_for('images', filename = 'ga.jpg') }}" />
           </td>
           <td>
             <table>
@@ -22,7 +22,7 @@
         </tr>
       </table>
       <div id="ga-colour-strip-container">
-        <img id="ga-colour-strip" src="{{ url_for('static', filename = 'lo.jpg') }}" />
+        <img id="ga-colour-strip" src="{{ url_for('images', filename = 'lo.jpg') }}" />
       </div>
     </div>
 
