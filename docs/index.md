@@ -8,11 +8,11 @@ This repository consists of some of the datasets in the Foundation Base program.
 
 These datasets are categoriezed into different themes. By clicking a dataset name, its linked data API can be accessed.  
 
-
-
-## 1. Place Names:
+<details>
+<summary><b style="font-size:40vw">1. Place Names</b></summary>  
 
 - [Place Names](https://linked.data.gov.au/dataset/placenames)
+</details>
 
 
 <details>
@@ -32,21 +32,9 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 </details>
 
-## 2. Physical Infrastructure:
- 
-- [Powerlines](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_lines)
 
-- [Power Stations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_stations)
-
-- [Power Substations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_substations)
-
-- Pipelines
-
-- Waste Managements
-
-- Waste Water Treatments
-
-## 3. Transport
+<details>
+<summary><b style="font-size:40vw">3. Transport</b></summary>  
 
 - Railways
 
@@ -65,6 +53,8 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 - Landing Grounds
 
 - Railway Stations
+</details>
+
 
 <details>
 <summary><b style="font-size:40vw">4. Building and Settlement</b></summary>  
@@ -73,8 +63,11 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 - Emergency Management Facilities
 </details>
 
-## 5. Elevation
+
+<details>
+<summary><b style="font-size:40vw">5. Elevation</b></summary>  
 
 - ELVIS
+</details>
 
 
