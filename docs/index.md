@@ -15,6 +15,22 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 - [Place Names](https://linked.data.gov.au/dataset/placenames)
 
 
+<details>
+<summary><b style="font-size:40vw">2. Physical Infrastructure</b></summary>  
+
+- [Powerlines](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_lines)
+
+- [Power Stations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_stations)
+
+- [Power Substations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_substations)
+
+- Pipelines
+
+- Waste Managements
+
+- Waste Water Treatments
+
+</details>
 
 ## 2. Physical Infrastructure:
  
