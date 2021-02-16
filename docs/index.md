@@ -13,6 +13,15 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 - [Place Names](https://linked.data.gov.au/dataset/placenames)
 
+<details>
+	<summary>2. Physical Infrastructure</summary>
+
+	- [Powerlines](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_lines)
+
+	- [Power Stations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_stations)
+</details>
+
+
 ## 2. Physical Infrastructure:
  
 - [Powerlines](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_lines)
