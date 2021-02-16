@@ -16,7 +16,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b>2. Physical Infrastructure</b></summary>  
+<summary><b style="font-size:2vw">2. Physical Infrastructure</b></summary>  
 
 - [Powerlines](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_lines)
 
@@ -34,7 +34,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b>3. Transport</b></summary>  
+<summary><b style="font-size:2vw">3. Transport</b></summary>  
 
 - Railways
 
@@ -57,7 +57,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b>4. Building and Settlement</b></summary>  
+<summary><b style="font-size:2vw">4. Building and Settlement</b></summary>  
 
 - Hospitals
 - Emergency Management Facilities
@@ -65,7 +65,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b>5. Elevation</b></summary>  
+<summary><b style="font-size:2vw">5. Elevation</b></summary>  
 
 - ELVIS
 </details>
