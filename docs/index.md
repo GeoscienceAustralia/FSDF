@@ -49,6 +49,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 <details>
 	<summary>4. Building and Settlement</summary>
+
 	Datasets available:
 		* Hospitals
 		* Emergency Management Facilities
