@@ -8,6 +8,7 @@ This repository consists of some of the datasets in the Foundation Base program.
 
 These datasets are categoriezed in five themes. By clicking a dataset name, its linked data API can be accessed.  
 
+
 ## 1. Place Names:
 
 - [Place Names](https://linked.data.gov.au/dataset/placenames)
@@ -46,11 +47,12 @@ These datasets are categoriezed in five themes. By clicking a dataset name, its 
 
 - Railway Stations
 
-## 4. Building and Settlement
-
-- Hospitals
-
-- Emergency Management Facilities
+<details>
+	<summary>## 4. Building and Settlement</summary>
+	Datasets available:
+		*Hospitals
+		*Emergency Management Facilities
+</details>
 
 ## 5. Elevation
 
