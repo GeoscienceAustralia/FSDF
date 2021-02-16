@@ -51,7 +51,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 - Railway Stations
 
 <details>
-<summary><b style="font-size:10vw">4. Building and Settlement</b></summary>
+<summary><b style="font-size:18vw">4. Building and Settlement</b></summary>
 
 - Hospitals
 - Emergency Management Facilities
