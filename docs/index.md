@@ -8,10 +8,18 @@ This repository consists of some of the datasets in the Foundation Base program.
 
 These datasets are categoriezed into different themes. By clicking a dataset name, its linked data API can be accessed.  
 
+<details>
+	<summary>1. Place Names</summary>
+
+	- <a href="https://linked.data.gov.au/dataset/placenames">
+Place Names</a>
+</details>
+
 
 ## 1. Place Names:
 
 - [Place Names](https://linked.data.gov.au/dataset/placenames)
+
 
 
 ## 2. Physical Infrastructure:
