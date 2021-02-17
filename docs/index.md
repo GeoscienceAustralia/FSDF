@@ -4,9 +4,9 @@
 ![Geoscience Australia](./images/lo.jpg)
   
 
-This repository consists of some of the datasets in the Foundation Base program.
+This repository consists of some of the datasets in the Foundation Base program in Geoscience Australia.
 
-These datasets are categoriezed into different themes. By clicking a dataset name, its linked data API can be accessed.  
+These datasets are categoriezed into different themes. By clicking a dataset name under a theme, its linked data API can be accessed.  
 
 <details>
 <summary><b style="font-size:2vw">1. Place Names</b></summary>  
