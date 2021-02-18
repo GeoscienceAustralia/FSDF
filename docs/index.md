@@ -18,7 +18,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 <details>
 <summary><b style="font-size:2vw">2. Place Names</b></summary>  
 
-- [Place Names](https://fsdf.org.au/dataset/placenames)
+- [Place Names](https://linked.data.gov.au/dataset/placenames)
 </details>
 
 
