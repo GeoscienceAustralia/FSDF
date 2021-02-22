@@ -31,17 +31,17 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 - [Power Substations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_substations)
 
-- Pipelines
+- Pipelines (coming later)
 
-- Waste Managements
+- Waste Managements (coming later)
 
-- Waste Water Treatments
+- Waste Water Treatments (coming later)
 
 </details>
 
 
 <details>
-<summary><b style="font-size:2vw">4. Transport</b></summary>  
+<summary><b style="font-size:2vw">4. Transport&nsbn</b>(coming later)</summary>  
 
 - Railways
 
@@ -64,7 +64,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b style="font-size:2vw">5. Building and Settlement</b></summary>  
+<summary><b style="font-size:2vw">5. Building and Settlement&nsbn</b>(coming later)</summary>  
 
 - Hospitals
 - Emergency Management Facilities
@@ -72,7 +72,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b style="font-size:2vw">6. Elevation</b></summary>  
+<summary><b style="font-size:2vw">6. Elevation&nsbn</b>(coming later)</summary>  
 
 - ELVIS
 </details>
