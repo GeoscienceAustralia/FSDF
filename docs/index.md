@@ -41,7 +41,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b style="font-size:2vw">4. Transport&nsbn</b>(coming later)</summary>  
+<summary><b style="font-size:2vw">4. Transport</b>(coming later)</summary>  
 
 - Railways
 
@@ -64,7 +64,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b style="font-size:2vw">5. Building and Settlement&nsbn</b>(coming later)</summary>  
+<summary><b style="font-size:2vw">5. Building and Settlement</b>(coming later)</summary>  
 
 - Hospitals
 - Emergency Management Facilities
@@ -72,7 +72,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b style="font-size:2vw">6. Elevation&nsbn</b>(coming later)</summary>  
+<summary><b style="font-size:2vw">6. Elevation</b>(coming later)</summary>  
 
 - ELVIS
 </details>
