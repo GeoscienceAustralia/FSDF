@@ -11,7 +11,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 <details>
 <summary><b style="font-size:2vw">1. AusPIX</b></summary>  
 
-- [AusPIX](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/)
+- [AusPIX](https://linked.data.gov.au/dataset/auspix)
 </details>
 
 
@@ -66,8 +66,9 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 <details>
 <summary><b style="font-size:2vw">5. Building and Settlement</b>(coming later)</summary>  
 
-- Hospitals
-- Emergency Management Facilities
+- [Hospitals](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-facilities-dataset/medical/)
+
+- [Emergency Management Facilities](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-facilities-dataset/emergency/)
 </details>
 
 
