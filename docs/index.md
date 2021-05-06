@@ -64,7 +64,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 
 
 <details>
-<summary><b style="font-size:2vw">5. Building and Settlement</b>(coming later)</summary>  
+<summary><b style="font-size:2vw">5. Building and Settlement</b></summary>  
 
 - [Hospitals](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-facilities-dataset/medical/)
 
