@@ -1,28 +1,24 @@
 # baseURI: http://linked.data.gov.au/def/fsdf-network
-# imports: http://linked.data.gov.au/def/fsdf-base
+# imports: http://linked.data.gov.au/def/fsdf-core
 # imports: http://purl.org/dc/terms/
+# imports: http://topbraid.org/schema/
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.opengis.net/ont/sf
 # imports: http://www.w3.org/2004/02/skos/core
 
-@prefix base: <http://linked.data.gov.au/def/fsdf-base/> .
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix my: <http://example.org/idtype/> .
 @prefix net: <http://linked.data.gov.au/def/fsdf-network/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pn: <http://linked.data.gov.au/def/placenames/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-my:Resource99
-  a my:Class88 ;
-  dcterms:identifier "id2"^^my:typeB ;
-.
 <http://linked.data.gov.au/def/fsdf-network>
   a owl:Ontology ;
   dcterms:contributor <https://orcid.org/0000-0002-4643-7289> ;
@@ -30,18 +26,27 @@ my:Resource99
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:description "Generic network ontology for FSDF. To be used as the basis for FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Powerlines. Adapted from http://inspire.ec.europa.eu/ont/net ." ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2021-01-06"^^xsd:date ;
-  dcterms:source "<https://raw.githubusercontent.com/inspire-eu-rdf/inspire-rdf-vocabularies/master/net/net.ttl>" ;
-  owl:imports <http://linked.data.gov.au/def/fsdf-base> ;
+  dcterms:modified "2021-05-11"^^xsd:date ;
+  dcterms:source <https://raw.githubusercontent.com/inspire-eu-rdf/inspire-rdf-vocabularies/master/net/net.ttl> ;
+  sdo:codeRepository "https://github.com/GeoscienceAustralia/FSDF"^^xsd:anyURI ;
+  rdfs:label "FSDF Network ontology" ;
+  owl:imports <http://linked.data.gov.au/def/fsdf-core> ;
   owl:imports dcterms: ;
+  owl:imports <http://topbraid.org/schema/> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.opengis.net/ont/sf> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
+.
+net:ConnectionType
+  a owl:Class ;
+  rdfs:label "Connection type" ;
+  rdfs:subClassOf skos:Concept ;
 .
 net:CrossReference
   a owl:Class ;
   rdfs:comment "The cross reference may represent the case where two elements are different representations of the same spatial object."@en ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/CrossReference> ;
+  rdfs:label "Cross reference" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -52,11 +57,7 @@ net:CrossReference
 .
 net:DirectedLink
   a owl:Class ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom <http://linked.data.gov.au/def/fsdf-base#Sign> ;
-      owl:onProperty net:direction ;
-    ] ;
+  rdfs:label "Directed link" ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom net:Link ;
@@ -69,12 +70,17 @@ net:DirectedLink
     ] ;
   skos:definition "A link either in its positive or negative direction."@en ;
 .
+net:Direction
+  a owl:Class ;
+  rdfs:label "Direction" ;
+  rdfs:subClassOf skos:Concept ;
+.
 net:GeneralisedLink
   a owl:Class ;
   rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/GeneralisedLink> ;
+  rdfs:label "Generalised link" ;
   rdfs:subClassOf net:NetworkElement ;
-  rdfs:subClassOf geo:Feature ;
   skos:definition "Abstract base type representing a linear network element that may be used as a target in linear referencing."@en ;
 .
 net:GradeSeparatedCrossing
@@ -83,8 +89,8 @@ net:GradeSeparatedCrossing
 
 NOTE 2 In the normal case this is when elements intersect in the x/y-plane when the z coordinate is not present or is not accurate enough."""@en ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/GradeSeparatedCrossing> ;
+  rdfs:label "Grade separated crossing" ;
   rdfs:subClassOf net:NetworkElement ;
-  rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom net:Link ;
@@ -100,8 +106,8 @@ NOTE 2 In the normal case this is when elements intersect in the x/y-plane when 
 net:Link
   a owl:Class ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/Link> ;
+  rdfs:label "Link" ;
   rdfs:subClassOf net:GeneralisedLink ;
-  rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom net:Node ;
@@ -129,6 +135,7 @@ net:LinkReference
   rdfs:comment """Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
 inv: element.oclIsKindOf(GeneralisedLink)
 """ ;
+  rdfs:label "Link reference" ;
   rdfs:subClassOf net:NetworkReference ;
   skos:definition "A network reference to a linear network element."@en ;
 .
@@ -137,8 +144,8 @@ net:LinkSequence
   rdfs:comment "EXAMPLE A link sequence may represent a route."@en ;
   rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/LinkSequence> ;
+  rdfs:label "Link sequence" ;
   rdfs:subClassOf net:GeneralisedLink ;
-  rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom net:DirectedLink ;
@@ -158,8 +165,8 @@ net:LinkSet
 EXAMPLE A dual carriageway road, as a collection of the two link sequences that represent each carriageway."""@en ;
   rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/LinkSet> ;
+  rdfs:label "Link set" ;
   rdfs:subClassOf net:NetworkElement ;
-  rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom net:GeneralisedLink ;
@@ -176,6 +183,7 @@ net:Network
   a owl:Class ;
   rdfs:comment "The reason for collecting certain elements in a certain network may vary (e.g. connected elements for the same mode of transport)"@en ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/Network> ;
+  rdfs:label "Network" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -193,8 +201,8 @@ net:NetworkArea
   a owl:Class ;
   rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkArea> ;
+  rdfs:label "Network area" ;
   rdfs:subClassOf net:NetworkElement ;
-  rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:onProperty net:geometry ;
@@ -207,8 +215,8 @@ net:NetworkConnection
   rdfs:comment "Elements in different networks: /*  All elements have to be in different networks */" ;
   rdfs:comment "In the case where the networks are in different spatial data sets, a network connection object may exist in both data sets."@en ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkConnection> ;
+  rdfs:label "Network connection" ;
   rdfs:subClassOf net:NetworkElement ;
-  rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -225,32 +233,27 @@ net:NetworkElement
   a owl:Class ;
   rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkElement> ;
+  rdfs:label "Network element" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom net:Network ;
-      owl:onProperty net:inNetwork ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://linked.data.gov.au/def/fsdf-core#identifier> ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://linked.data.gov.au/def/fsdf-base#identifier> ;
+      owl:onProperty <http://linked.data.gov.au/def/fsdf-core#recordTime> ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:dateTime ;
-      owl:onProperty <http://linked.data.gov.au/def/fsdf-base#endLifespanVersion> ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://linked.data.gov.au/def/fsdf-core#validTime> ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty net:inNetwork ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onProperty <http://linked.data.gov.au/def/fsdf-base#beginLifespanVersion> ;
-      owl:someValuesFrom xsd:dateTime ;
     ] ;
   skos:definition "Abstract base type representing an element in a network. Every element in a network provides some function that is of interest in the network."@en ;
 .
@@ -259,11 +262,12 @@ net:NetworkProperty
   rdfs:comment "In the simplest case (NetworkReference), the network property applies to the whole network element. In the case of a Link, the spatial reference may be restricted to part of the Link by using a linear reference. ISO/TC 211 is currently in the early stages of developing a standard for Linear Referencing (ISO 19148). A simple mechanism to express linear references is provided in this version of the network model; it is expected that the model will be extended once ISO 19148 is stable. The current simple model requires for all linear references two expressions representing a distance from the start of the Link along its curve geometry. The network property applies to the part of the Link between fromPosition and toPosition."@en ;
   rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkProperty> ;
-  rdfs:subClassOf geo:Feature ;
+  rdfs:label "Network property" ;
   skos:definition "Abstract base type representing phenomena located at or along a network element. This base type provides general properties to associate the network-related phenomena (network properties) with the network elements."@en ;
 .
 net:NetworkReference
   a owl:Class ;
+  rdfs:label "Network reference" ;
   skos:definition "A reference to a network element."@en ;
 .
 net:Node
@@ -271,8 +275,8 @@ net:Node
   rdfs:comment "NOTE if a topological representation of the network is used the road node is either a topological connection between two or more links or the termination of a ink. If a geometric representation of the network is used road nodes are represented by points or alternatively another geometric shape. [EuroRoadS]"@en ;
   rdfs:comment true ;
   rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/Node> ;
+  rdfs:label "Node" ;
   rdfs:subClassOf net:NetworkElement ;
-  rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom net:Link ;
@@ -295,6 +299,7 @@ net:SimpleLinearReference
   rdfs:comment """Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
 inv: element.oclIsKindOf(GeneralisedLink)
 """ ;
+  rdfs:label "Simple linear reference" ;
   rdfs:subClassOf net:LinkReference ;
   skos:definition "A network reference that is restricted to part of a linear network element. The part is the part of the network element between fromPosition and toPosition."@en ;
 .
@@ -303,6 +308,7 @@ net:SimplePointReference
   rdfs:comment """Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
 inv: element.oclIsKindOf(GeneralisedLink)
 """ ;
+  rdfs:label "Simple point reference" ;
   rdfs:subClassOf net:LinkReference ;
   skos:definition "A network reference that is restricted to a point on a linear network element. The point is the location on the network element at the position atPosition along the network."@en ;
 .
@@ -310,7 +316,8 @@ net:applicableDirection
   a owl:ObjectProperty ;
   rdfs:comment "EXAMPLE A speed limit is a property that applies to a direction of the link (or both directions) while a house number is a phenomenon along a link."@en ;
   rdfs:domain net:LinkReference ;
-  rdfs:range skos:Concept ;
+  rdfs:label "applicable direction" ;
+  rdfs:range net:Direction ;
   rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/LinkDirectionValue> ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#LinkReference.applicableDirection> ;
   skos:definition """The directions of the generalised link to which the reference applies.
@@ -320,13 +327,15 @@ In cases where a property does not apply <i>to</i> a direction along a link, but
 net:atPosition
   a owl:DatatypeProperty ;
   rdfs:domain net:SimplePointReference ;
-  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Measure> ;
+  rdfs:label "at position" ;
+  rdfs:range cdt:ucum ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#SimplePointReference.atPosition> ;
   skos:definition "Position of the point, expressed as the distance from the start of the linear network element along its curve geometry."@en ;
 .
 net:centrelineGeometry
   a owl:ObjectProperty ;
   rdfs:domain net:Link ;
+  rdfs:label "centreline geometry" ;
   rdfs:range sf:LineString ;
   rdfs:subPropertyOf geo:hasGeometry ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Link.centrelineGeometry> ;
@@ -335,7 +344,8 @@ net:centrelineGeometry
 net:direction
   a owl:DatatypeProperty ;
   rdfs:domain net:DirectedLink ;
-  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Sign> ;
+  rdfs:label "consistent link direction?" ;
+  rdfs:range xsd:boolean ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#DirectedLink.direction> ;
   skos:definition "Indicates if the directed link agrees (positive) or disagrees (negative) with the positive direction of the link."@en ;
 .
@@ -351,6 +361,7 @@ net:element
           net:GradeSeparatedCrossing
         ) ;
     ] ;
+  rdfs:label "element" ;
   rdfs:range net:NetworkElement ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#CrossReference.element> ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#GradeSeparatedCrossing.element> ;
@@ -366,6 +377,7 @@ net:element
 net:endNode
   a owl:ObjectProperty ;
   rdfs:domain net:Link ;
+  rdfs:label "end node" ;
   rdfs:range net:Node ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Link.endNode> ;
   skos:definition "The optional end node for this link. The end node may be the same instance as the start node."@en ;
@@ -373,6 +385,7 @@ net:endNode
 net:fictitious
   a owl:DatatypeProperty ;
   rdfs:domain net:Link ;
+  rdfs:label "fictitious centreline?" ;
   rdfs:range xsd:boolean ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Link.fictitious> ;
   skos:definition "Indicator that the centreline geometry of the link is a straight line with no intermediate control points &ndash; unless the straight line represents the geography in the resolution of the data set appropriately."^^rdf:HTML ;
@@ -380,12 +393,14 @@ net:fictitious
 net:fromPosition
   a owl:DatatypeProperty ;
   rdfs:domain net:SimpleLinearReference ;
-  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Measure> ;
+  rdfs:label "start position" ;
+  rdfs:range cdt:ucum ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#SimpleLinearReference.fromPosition> ;
   skos:definition "The start position of the linear element, expressed as the distance from the start of the linear network element along its curve geometry."@en ;
 .
 net:geographicalName
   a owl:ObjectProperty ;
+  rdfs:label "geographical name" ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Network.geographicalName> ;
   skos:definition "Geographical name for this network."@en ;
   skos:scopeNote "Usually a pn:PlaceName" ;
@@ -399,6 +414,7 @@ net:geometry
           net:Node
         ) ;
     ] ;
+  rdfs:label "geometry" ;
   rdfs:range sf:Geometry ;
   rdfs:subPropertyOf geo:hasGeometry ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#NetworkArea.geometry> ;
@@ -409,7 +425,7 @@ net:geometry
 net:inNetwork
   a owl:ObjectProperty ;
   rdfs:domain net:NetworkElement ;
-  rdfs:range net:Network ;
+  rdfs:label "in network" ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#NetworkElement.inNetwork> ;
   skos:definition "The networks in which a network element is a member."@en ;
 .
@@ -428,6 +444,7 @@ net:link
           net:LinkSet
         ) ;
     ] ;
+  rdfs:label "link" ;
   rdfs:range net:GeneralisedLink ;
   skos:definition "The link _or_ The ordered collection of directed links that constitute the link sequence _or_ The set of links and link sequences that constitute the link set"@en ;
 .
@@ -435,19 +452,22 @@ net:networkRef
   a owl:ObjectProperty ;
   rdfs:comment "This attribute provides an indirect spatial reference based on a reference to an element of an underlying network. See the chapter on Object Referencing in the Generic Conceptual Model for a discussion on modelling object references."@en ;
   rdfs:domain net:NetworkProperty ;
+  rdfs:label "network reference" ;
   rdfs:range net:NetworkReference ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#NetworkProperty.networkRef> ;
   skos:definition "Spatial reference of the network-related property."@en ;
 .
 net:offset
   a owl:DatatypeProperty ;
-  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Measure> ;
+  rdfs:label "offset from centreline" ;
+  rdfs:range cdt:ucum ;
   skos:definition "An offset from the centerline geometry of the generalised link, where applicable; a positive offset is to the right in the direction of the link, a negative offset is to the left."@en ;
 .
 net:spokeEnd
   a owl:ObjectProperty ;
   rdfs:comment "NOTE In the INSPIRE context, this spoke property is to be published when this information is published in current exchange formats of the data set."@en ;
   rdfs:domain net:Node ;
+  rdfs:label "spoke end" ;
   rdfs:range net:Link ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Node.spokeEnd> ;
   skos:definition "The links that enter the node."@en ;
@@ -456,6 +476,7 @@ net:spokeStart
   a owl:ObjectProperty ;
   rdfs:comment "NOTE In the INSPIRE context, this spoke property is to be published when this information is published in current exchange formats of the data set."@en ;
   rdfs:domain net:Node ;
+  rdfs:label "spoke start" ;
   rdfs:range net:Link ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Node.spokeStart> ;
   skos:definition "The links that leave the node."@en ;
@@ -463,6 +484,7 @@ net:spokeStart
 net:startNode
   a owl:ObjectProperty ;
   rdfs:domain net:Link ;
+  rdfs:label "start node" ;
   rdfs:range net:Node ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#Link.startNode> ;
   skos:definition "The optional start node for this link."@en ;
@@ -470,15 +492,30 @@ net:startNode
 net:toPosition
   a owl:DatatypeProperty ;
   rdfs:domain net:SimpleLinearReference ;
-  rdfs:range <http://linked.data.gov.au/def/fsdf-base#Measure> ;
+  rdfs:label "end position" ;
+  rdfs:range cdt:ucum ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#SimpleLinearReference.toPosition> ;
   skos:definition "The end position of the linear element, expressed as the distance from the start of the linear network element along its curve geometry."@en ;
 .
 net:type
   a owl:ObjectProperty ;
   rdfs:domain net:NetworkConnection ;
-  rdfs:range skos:Concept ;
+  rdfs:label "connection type" ;
+  rdfs:range net:ConnectionType ;
   rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/ConnectionTypeValue> ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#NetworkConnection.type> ;
   skos:definition "Categorisation of the network connection."@en ;
+.
+cdt:ucum
+  a rdfs:Datatype ;
+  rdfs:comment "scaled number, expressed as decimal-space-UCUMcode" ;
+  rdfs:isDefinedBy <https://ci.mines-stetienne.fr/lindt/v3/custom_datatypes> ;
+  rdfs:label "Measure" ;
+  skos:definition """UCUM Datatype - Datatype to encode measurements in a simple literal.
+
+Lexical space - Concatenation of the lexical form of an xsd:decimal, optionally followed by e or E and the lexical form of an xsd:integer, at least one space, and a unit expression constructed using The Unified Code for Units of Measure code system.
+
+Value space-	The set of pairs (v, u) such that v is a real number and u is any unit with magnitude 1 regarding the base units of Section 4.2 of [UCUM].
+
+Lexical-to-value mapping - The first part of the lexical form defines a number v = m × 10e where m is represented by the mandatory xsd:decimal and e is represented by the optional xsd:integer, or equal to 0 if omitted. The second part of the lexical form defines a unit u = r·b where r is the magnitude of u regarding the base units of Section 4.2 of [UCUM]. The lexical-to-value mapping maps the lexical form to the pair (v × r, b).""" ;
 .
