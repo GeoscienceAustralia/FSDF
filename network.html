@@ -236,7 +236,7 @@
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
         <dd>2020-11-30</dd>
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
-        <dd>2021-05-11</dd>
+        <dd>2021-05-12</dd>
         <dt>Imports</dt>
         <dd>
             <a href="http://linked.data.gov.au/def/fsdf-core">http://linked.data.gov.au/def/fsdf-core</a><br/>
@@ -339,12 +339,6 @@
                 </td>
             </tr>
             <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-            <tr>
                 <th>Restrictions</th>
                 <td>
                     <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 2<br/>
@@ -368,8 +362,8 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -469,8 +463,8 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 2<br/>
                     <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 2<br/>
                 </td>
             </tr>
         </table>
@@ -504,8 +498,8 @@
                 <th>Restrictions</th>
                 <td>
                     <a href="#endnode">net:endNode</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#startnode">net:startNode</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#fictitiouscentreline?">net:fictitious</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#startnode">net:startNode</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#centrelinegeometry">net:centrelineGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="http://www.opengis.net/ont/sf#LineString">sf:LineString</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
@@ -513,9 +507,9 @@
                 <th>In domain of</th>
                 <td>
                     <a href="#endnode">net:endNode</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#fictitiouscentreline?">net:fictitious</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#startnode">net:startNode</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#centrelinegeometry">net:centrelineGeometry</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#startnode">net:startNode</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#fictitiouscentreline?">net:fictitious</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -537,8 +531,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Linear reference targets must be linear network elements: /<em>Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.</em>/
-inv: element.oclIsKindOf(GeneralisedLink)</p>
+                    <p>A network reference to a linear network element.</p>
                 </td>
             </tr>
             <tr>
@@ -578,7 +571,7 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>true</p>
+                    <p>A network element which represents a continuous path in the network without any branches. The element has a defined beginning and end and every position on the link sequence is identifiable with one single parameter such as length.</p>
                 </td>
             </tr>
             <tr>
@@ -659,8 +652,8 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#geographicalname">net:geographicalName</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
                     <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#geographicalname">net:geographicalName</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
                 </td>
             </tr>
         </table>
@@ -681,7 +674,7 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>true</p>
+                    <p>A 2-dimensional element in a network.</p>
                 </td>
             </tr>
             <tr>
@@ -714,7 +707,7 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>In the case where the networks are in different spatial data sets, a network connection object may exist in both data sets.</p>
+                    <p>Represents a logical connection between two or more network elements in different networks.</p>
                 </td>
             </tr>
             <tr>
@@ -754,7 +747,7 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>true</p>
+                    <p>Abstract base type representing an element in a network. Every element in a network provides some function that is of interest in the network.</p>
                 </td>
             </tr>
             <tr>
@@ -766,21 +759,21 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://linked.data.gov.au/def/fsdf-core#recordTime">http://linked.data.gov.au/def/fsdf-core#recordTime</a> <span class="cardinality">max</span> 1<br/>
                     <a href="http://linked.data.gov.au/def/fsdf-core#identifier">http://linked.data.gov.au/def/fsdf-core#identifier</a> <span class="cardinality">max</span> 1<br/>
-                    <a href="http://linked.data.gov.au/def/fsdf-core#validTime">http://linked.data.gov.au/def/fsdf-core#validTime</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://linked.data.gov.au/def/fsdf-core#recordTime">http://linked.data.gov.au/def/fsdf-core#recordTime</a> <span class="cardinality">max</span> 1<br/>
                     <a href="#innetwork">net:inNetwork</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://linked.data.gov.au/def/fsdf-core#validTime">http://linked.data.gov.au/def/fsdf-core#validTime</a> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#Gradeseparatedcrossing">net:GradeSeparatedCrossing</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Generalisedlink">net:GeneralisedLink</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Networkarea">net:NetworkArea</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Linkset">net:LinkSet</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Networkconnection">net:NetworkConnection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Linkset">net:LinkSet</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Networkarea">net:NetworkArea</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Gradeseparatedcrossing">net:GradeSeparatedCrossing</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -813,7 +806,7 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>In the simplest case (NetworkReference), the network property applies to the whole network element. In the case of a Link, the spatial reference may be restricted to part of the Link by using a linear reference. ISO/TC 211 is currently in the early stages of developing a standard for Linear Referencing (ISO 19148). A simple mechanism to express linear references is provided in this version of the network model; it is expected that the model will be extended once ISO 19148 is stable. The current simple model requires for all linear references two expressions representing a distance from the start of the Link along its curve geometry. The network property applies to the part of the Link between fromPosition and toPosition.</p>
+                    <p>Abstract base type representing phenomena located at or along a network element. This base type provides general properties to associate the network-related phenomena (network properties) with the network elements.</p>
                 </td>
             </tr>
             <tr>
@@ -887,15 +880,15 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#spokestart">net:spokeStart</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#spokeend">net:spokeEnd</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#spokestart">net:spokeStart</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#startnode">net:startNode</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#endnode">net:endNode</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#startnode">net:startNode</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -922,8 +915,8 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#startposition">net:fromPosition</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#endposition">net:toPosition</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#startposition">net:fromPosition</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -984,7 +977,11 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Description</th>
                 <td>
-                    EXAMPLE A speed limit is a property that applies to a direction of the link (or both directions) while a house number is a phenomenon along a link.
+                    The directions of the generalised link to which the reference applies.
+
+
+
+In cases where a property does not apply <i>to</i> a direction along a link, but represents a phenomenon <i>along</i> a link, &ldquo;inDirection&rdquo; refers to the right side in the direction of the link.
                 </td>
             </tr>
             <tr>
@@ -1056,17 +1053,17 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Description</th>
                 <td>
-                    Sequence of crossing links. The order reflects their elevation; the first link is the lower link.
+                    The collection of elements that constitutes the network.
                 </td>
             </tr>
             <tr>
                 <th>Equivalent properties</th>
                 <td>
+                    <a href="http://inspire.ec.europa.eu/ont/net#NetworkReference.element">http://inspire.ec.europa.eu/ont/net#NetworkReference.element</a>
+                    <a href="http://inspire.ec.europa.eu/ont/net#CrossReference.element">http://inspire.ec.europa.eu/ont/net#CrossReference.element</a>
                     <a href="http://inspire.ec.europa.eu/ont/net#GradeSeparatedCrossing.element">http://inspire.ec.europa.eu/ont/net#GradeSeparatedCrossing.element</a>
                     <a href="http://inspire.ec.europa.eu/ont/net#NetworkConnection.element">http://inspire.ec.europa.eu/ont/net#NetworkConnection.element</a>
-                    <a href="http://inspire.ec.europa.eu/ont/net#NetworkReference.element">http://inspire.ec.europa.eu/ont/net#NetworkReference.element</a>
                     <a href="http://inspire.ec.europa.eu/ont/net#Network.elements">http://inspire.ec.europa.eu/ont/net#Network.elements</a>
-                    <a href="http://inspire.ec.europa.eu/ont/net#CrossReference.element">http://inspire.ec.europa.eu/ont/net#CrossReference.element</a>
                 </td>
             </tr>
             <tr>
@@ -1255,7 +1252,7 @@ inv: element.oclIsKindOf(GeneralisedLink)</p>
             <tr>
                 <th>Description</th>
                 <td>
-                    This attribute provides an indirect spatial reference based on a reference to an element of an underlying network. See the chapter on Object Referencing in the Generic Conceptual Model for a discussion on modelling object references.
+                    Spatial reference of the network-related property.
                 </td>
             </tr>
             <tr>
