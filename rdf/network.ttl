@@ -1,41 +1,41 @@
-# baseURI: http://linked.data.gov.au/def/fsdf-network
-# imports: http://linked.data.gov.au/def/fsdf-core
+# baseURI: https://linked.data.gov.au/def/fsdf/network
 # imports: http://purl.org/dc/terms/
-# imports: http://topbraid.org/schema/
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.opengis.net/ont/sf
 # imports: http://www.w3.org/2004/02/skos/core
+# imports: https://linked.data.gov.au/def/fsdf/core
+# prefix: net
 
-@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
+@prefix cdt: <https://w3id.org/cdt/> .
+@prefix core: <https://linked.data.gov.au/def/fsdf/core#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix net: <http://linked.data.gov.au/def/fsdf-network/> .
+@prefix net: <https://linked.data.gov.au/def/fsdf/network#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sdo: <http://schema.org/> .
+@prefix sdo: <https://schema.org/> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://linked.data.gov.au/def/fsdf-network>
+<https://linked.data.gov.au/def/fsdf/network>
   a owl:Ontology ;
   dcterms:contributor <https://orcid.org/0000-0002-4643-7289> ;
   dcterms:created "2020-11-30"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:description "Generic network ontology for FSDF. To be used as the basis for FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Powerlines. Adapted from http://inspire.ec.europa.eu/ont/net ." ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2021-05-12"^^xsd:date ;
+  dcterms:modified "2021-05-13"^^xsd:date ;
   dcterms:source <https://raw.githubusercontent.com/inspire-eu-rdf/inspire-rdf-vocabularies/master/net/net.ttl> ;
-  sdo:codeRepository "https://github.com/GeoscienceAustralia/FSDF"^^xsd:anyURI ;
   rdfs:label "FSDF Network ontology" ;
-  owl:imports <http://linked.data.gov.au/def/fsdf-core> ;
   owl:imports dcterms: ;
-  owl:imports <http://topbraid.org/schema/> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.opengis.net/ont/sf> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <https://linked.data.gov.au/def/fsdf/core> ;
+  sdo:codeRepository "https://github.com/GeoscienceAustralia/FSDF"^^xsd:anyURI ;
 .
 net:ConnectionType
   a owl:Class ;
@@ -232,17 +232,17 @@ net:NetworkElement
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://linked.data.gov.au/def/fsdf-core#identifier> ;
+      owl:onProperty core:identifier ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://linked.data.gov.au/def/fsdf-core#recordTime> ;
+      owl:onProperty core:recordTime ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://linked.data.gov.au/def/fsdf-core#validTime> ;
+      owl:onProperty core:validTime ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -418,6 +418,7 @@ net:inNetwork
   a owl:ObjectProperty ;
   rdfs:domain net:NetworkElement ;
   rdfs:label "in network" ;
+  rdfs:range net:Network ;
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#NetworkElement.inNetwork> ;
   skos:definition "The networks in which a network element is a member."@en ;
 .
@@ -498,11 +499,23 @@ net:type
   owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#NetworkConnection.type> ;
   skos:definition "Categorisation of the network connection."@en ;
 .
+<https://orcid.org/0000-0002-3884-3420>
+  a sdo:Person ;
+  sdo:affiliation <https://linked.data.gov.au/org/csiro> ;
+  sdo:identifier "https://orcid.org/0000-0002-3884-3420"^^xsd:anyURI ;
+  sdo:name "Simon J D Cox" ;
+.
+<https://orcid.org/0000-0002-4643-7289>
+  a sdo:Person ;
+  sdo:affiliation <https://linked.data.gov.au/org/ga> ;
+  sdo:identifier "https://orcid.org/0000-0002-4643-7289"^^xsd:anyURI ;
+  sdo:name "Irina Bastrakova" ;
+.
 cdt:ucum
   a rdfs:Datatype ;
   rdfs:comment "scaled number, expressed as decimal-space-UCUMcode" ;
   rdfs:isDefinedBy <https://ci.mines-stetienne.fr/lindt/v3/custom_datatypes> ;
-  rdfs:label "Measure" ;
+  rdfs:label "Measure or scalar quantity" ;
   skos:definition """UCUM Datatype - Datatype to encode measurements in a simple literal.
 
 Lexical space - Concatenation of the lexical form of an xsd:decimal, optionally followed by e or E and the lexical form of an xsd:integer, at least one space, and a unit expression constructed using The Unified Code for Units of Measure code system.

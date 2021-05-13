@@ -1,37 +1,35 @@
-# baseURI: http://linked.data.gov.au/def/fsdf-core
+# baseURI: https://linked.data.gov.au/def/fsdf/core
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.w3.org/2006/time
 # prefix: core
 
-@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
-@prefix core: <http://linked.data.gov.au/def/fsdf-core#> .
+@prefix cdt: <https://w3id.org/cdt/> .
+@prefix core: <https://linked.data.gov.au/def/fsdf/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ex: <http://example.org/my/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix net: <http://linked.data.gov.au/def/fsdf-network/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:C1
-  a core:Contact ;
-.
-<http://linked.data.gov.au/def/fsdf-core>
+<https://linked.data.gov.au/def/fsdf/core>
   a owl:Ontology ;
   dcterms:created "2021-01-13"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:description "A small ontology for the 'core' properties of FSDF, mostly relating to lifecycle, quality, and citation information" ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2021-05-11"^^xsd:date ;
+  dcterms:modified "2021-05-13"^^xsd:date ;
   dcterms:title "FSDF core ontology" ;
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.w3.org/2006/time> ;
+  sdo:codeRepository "https://github.com/GeoscienceAustralia/FSDF"^^xsd:anyURI ;
 .
 core:Contact
   a owl:Class ;
@@ -458,7 +456,7 @@ core:planimetricAccuracy
   dcterms:description "The standard deviation of the horizontal positional accuracy" ;
   rdfs:domain core:Feature ;
   rdfs:label "Planimetric Accuracy" ;
-  rdfs:range <http://linked.data.gov.au/def/fsdf-base/Measure> ;
+  rdfs:range cdt:ucum ;
 .
 core:positionName
   a owl:DatatypeProperty ;
@@ -537,7 +535,7 @@ core:verticalAccuracy
   dcterms:description "The standard deviation of the vertical positional accuracy" ;
   rdfs:domain core:Feature ;
   rdfs:label "Vertical Accuracy" ;
-  rdfs:range <http://linked.data.gov.au/def/fsdf-base/Measure> ;
+  rdfs:range cdt:ucum ;
 .
 core:website
   a owl:DatatypeProperty ;
@@ -555,4 +553,16 @@ Lexical space - Concatenation of the lexical form of an xsd:decimal, optionally 
 Value space-	The set of pairs (v, u) such that v is a real number and u is any unit with magnitude 1 regarding the base units of Section 4.2 of [UCUM].
 
 Lexical-to-value mapping - The first part of the lexical form defines a number v = m × 10e where m is represented by the mandatory xsd:decimal and e is represented by the optional xsd:integer, or equal to 0 if omitted. The second part of the lexical form defines a unit u = r·b where r is the magnitude of u regarding the base units of Section 4.2 of [UCUM]. The lexical-to-value mapping maps the lexical form to the pair (v × r, b).""" ;
+.
+<https://orcid.org/0000-0002-3884-3420>
+  a sdo:Person ;
+  sdo:affiliation <https://linked.data.gov.au/org/csiro> ;
+  sdo:identifier "https://orcid.org/0000-0002-3884-3420"^^xsd:anyURI ;
+  sdo:name "Simon J D Cox" ;
+.
+<https://orcid.org/0000-0002-4643-7289>
+  a sdo:Person ;
+  sdo:affiliation <https://linked.data.gov.au/org/ga> ;
+  sdo:identifier "https://orcid.org/0000-0002-4643-7289"^^xsd:anyURI ;
+  sdo:name "Irina Bastrakova" ;
 .
