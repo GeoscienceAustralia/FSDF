@@ -25,7 +25,9 @@
   dcterms:contributor <https://orcid.org/0000-0002-4643-7289> ;
   dcterms:created "2020-11-30"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
-  dcterms:description "Generic network ontology for FSDF. To be used as the basis for FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Powerlines. Adapted from http://inspire.ec.europa.eu/ont/net ." ;
+  dcterms:description """Generic network ontology for FSDF. To be used as the basis for FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Powerlines. 
+  
+  Adapted from http://inspire.ec.europa.eu/ont/net .""" ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:modified "2021-05-13"^^xsd:date ;
   dcterms:source <https://raw.githubusercontent.com/inspire-eu-rdf/inspire-rdf-vocabularies/master/net/net.ttl> ;
@@ -45,7 +47,7 @@ net:ConnectionType
 net:CrossReference
   a owl:Class ;
   rdfs:comment "The cross reference may represent the case where two elements are different representations of the same spatial object."@en ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/CrossReference> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/CrossReference> ;
   rdfs:label "Cross reference" ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -76,7 +78,7 @@ net:Direction
 .
 net:GeneralisedLink
   a owl:Class ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/GeneralisedLink> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/GeneralisedLink> ;
   rdfs:label "Generalised link" ;
   rdfs:subClassOf net:NetworkElement ;
   skos:definition "Abstract base type representing a linear network element that may be used as a target in linear referencing."@en ;
@@ -86,7 +88,7 @@ net:GradeSeparatedCrossing
   rdfs:comment """NOTE 1 In most cases, the number of elements will be two.
 
 NOTE 2 In the normal case this is when elements intersect in the x/y-plane when the z coordinate is not present or is not accurate enough."""@en ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/GradeSeparatedCrossing> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/GradeSeparatedCrossing> ;
   rdfs:label "Grade separated crossing" ;
   rdfs:subClassOf net:NetworkElement ;
   rdfs:subClassOf [
@@ -103,7 +105,7 @@ NOTE 2 In the normal case this is when elements intersect in the x/y-plane when 
 .
 net:Link
   a owl:Class ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/Link> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/Link> ;
   rdfs:label "Link" ;
   rdfs:subClassOf net:GeneralisedLink ;
   rdfs:subClassOf [
@@ -140,7 +142,7 @@ inv: element.oclIsKindOf(GeneralisedLink)
 net:LinkSequence
   a owl:Class ;
   rdfs:comment "EXAMPLE A link sequence may represent a route."@en ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/LinkSequence> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/LinkSequence> ;
   rdfs:label "Link sequence" ;
   rdfs:subClassOf net:GeneralisedLink ;
   rdfs:subClassOf [
@@ -160,7 +162,7 @@ net:LinkSet
   rdfs:comment """NOTE This spatial object type supports the aggregation of links to form objects with branches, loops, parallel sequences of links, gaps, etc.
 
 EXAMPLE A dual carriageway road, as a collection of the two link sequences that represent each carriageway."""@en ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/LinkSet> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/LinkSet> ;
   rdfs:label "Link set" ;
   rdfs:subClassOf net:NetworkElement ;
   rdfs:subClassOf [
@@ -178,7 +180,7 @@ EXAMPLE A dual carriageway road, as a collection of the two link sequences that 
 net:Network
   a owl:Class ;
   rdfs:comment "The reason for collecting certain elements in a certain network may vary (e.g. connected elements for the same mode of transport)"@en ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/Network> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/Network> ;
   rdfs:label "Network" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
@@ -195,7 +197,7 @@ net:Network
 .
 net:NetworkArea
   a owl:Class ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkArea> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/NetworkArea> ;
   rdfs:label "Network area" ;
   rdfs:subClassOf net:NetworkElement ;
   rdfs:subClassOf [
@@ -209,7 +211,7 @@ net:NetworkConnection
   a owl:Class ;
   rdfs:comment "Elements in different networks: /*  All elements have to be in different networks */" ;
   rdfs:comment "In the case where the networks are in different spatial data sets, a network connection object may exist in both data sets."@en ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkConnection> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/NetworkConnection> ;
   rdfs:label "Network connection" ;
   rdfs:subClassOf net:NetworkElement ;
   rdfs:subClassOf [
@@ -226,7 +228,7 @@ net:NetworkConnection
 .
 net:NetworkElement
   a owl:Class ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkElement> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/NetworkElement> ;
   rdfs:label "Network element" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
@@ -254,7 +256,7 @@ net:NetworkElement
 net:NetworkProperty
   a owl:Class ;
   rdfs:comment "In the simplest case (NetworkReference), the network property applies to the whole network element. In the case of a Link, the spatial reference may be restricted to part of the Link by using a linear reference. ISO/TC 211 is currently in the early stages of developing a standard for Linear Referencing (ISO 19148). A simple mechanism to express linear references is provided in this version of the network model; it is expected that the model will be extended once ISO 19148 is stable. The current simple model requires for all linear references two expressions representing a distance from the start of the Link along its curve geometry. The network property applies to the part of the Link between fromPosition and toPosition."@en ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/NetworkProperty> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/NetworkProperty> ;
   rdfs:label "Network property" ;
   skos:definition "Abstract base type representing phenomena located at or along a network element. This base type provides general properties to associate the network-related phenomena (network properties) with the network elements."@en ;
 .
@@ -266,7 +268,7 @@ net:NetworkReference
 net:Node
   a owl:Class ;
   rdfs:comment "NOTE if a topological representation of the network is used the road node is either a topological connection between two or more links or the termination of a ink. If a geometric representation of the network is used road nodes are represented by points or alternatively another geometric shape. [EuroRoadS]"@en ;
-  rdfs:isDefinedBy <http://inspire.ec.europa.eu/featureconcept/Node> ;
+  dcterms:source <http://inspire.ec.europa.eu/featureconcept/Node> ;
   rdfs:label "Node" ;
   rdfs:subClassOf net:NetworkElement ;
   rdfs:subClassOf [
