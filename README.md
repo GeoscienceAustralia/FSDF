@@ -7,6 +7,7 @@ See also:
 
 - [URI Conventions](./uri-convention.md)
 - [Code lists](./codelist.md)
+- [Technical guide for vocabaulary maintenance](./vocab-maintenance.md)
 - [Code repository for earlier work](https://bitbucket.csiro.au/projects/FDSF/repos/fdsf/browse) (inactive since May 2015)
 - [FSDF generic network model](./network.md)
 - [FSDF core feature model](./core.md)
