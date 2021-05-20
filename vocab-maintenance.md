@@ -1,4 +1,4 @@
-# Vocabulary Maintenance 
+# Vocabulary Maintenance and Publication
 
 ## Point of truth
 
