@@ -1,0 +1,83 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pt: <https://linked.data.gov.au/def/fsdf/place-type/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/def/fsdf/place-type> a skos:ConceptScheme;
+  dct:accrualPeriodicity <http://purl.org/cld/freq/completelyIrregular>;
+  dct:contributor <https://orcid.org/0000-0002-3884-3420>;
+  dct:created "2021-01-01"^^xsd:date;
+  dct:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin>;
+  dct:description "<p>List of place-types used in the Australian Gazetteer.</p>"^^rdf:HTML;
+  dct:identifier "https://linked.data.gov.au/def/fsdf/place-type"^^xsd:anyURI;
+  dct:license <https://creativecommons.org/publicdomain/zero/1.0/>;
+  dct:modified "2021-04-26"^^xsd:date;
+  dct:source "URN:ISBN:978-0-643-10218-7";
+  dct:title "Place Type"@en;
+  skos:hasTopConcept pt:CULTURE, pt:MINING .
+
+pt:CULTURE a skos:Concept;
+  skos:definition "Places that support activities and interactions of the community"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:narrower pt:ACCOMMODATION, pt:PLACE_OF_WORSHIP;
+  skos:prefLabel "CULTURE"@en;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/place-type> .
+
+pt:MINING a skos:Concept;
+  skos:definition "Place that reflect the adminstration extraction and processing of minerals, rock, gas and oil"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:narrower pt:EXTRACTION;
+  skos:prefLabel "MINING"@en;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/place-type> .
+
+pt:EXTRACTION a skos:Concept;
+  skos:broader pt:MINING;
+  skos:definition "A place related to the extraction of mined materials"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:narrower pt:ABANDONED_MINE, pt:ABANDONED_QUARRY;
+  skos:prefLabel "EXTRACTION"@en .
+
+pt:ABANDONED_MINE a skos:Concept;
+  skos:broader pt:EXTRACTION;
+  skos:definition "An underground site used for the extraction of minerals currently not in use"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:prefLabel "ABANDONED MINE"@en .
+
+pt:ABANDONED_QUARRY a skos:Concept;
+  skos:broader pt:EXTRACTION;
+  skos:definition "An open surface excavation used for the extraction of stone currently not in use"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:prefLabel "ABANDONED QUARRY"@en .
+
+pt:ABBEY a skos:Concept;
+  skos:broader pt:PLACE_OF_WORSHIP;
+  skos:definition "A building or buildings occupied by monks or nuns under an abbot or abbess, includes convent and monastery"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:prefLabel "ABBEY"@en .
+
+pt:ACCOMMODATION a skos:Concept;
+  skos:broader pt:CULTURE;
+  skos:definition "Places primarily used for short term accommodation"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:narrower pt:CAMP_GROUND, pt:CARAVAN_PARK;
+  skos:prefLabel "ACCOMMODATION"@en .
+
+pt:CAMP_GROUND a skos:Concept;
+  skos:broader pt:ACCOMMODATION;
+  skos:definition "An area where a CAMP has been established or where it would be suitable to establish one; an area, often provided with amenities, where it is permitted to set up a camp"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:prefLabel "CAMP GROUND"@en .
+
+pt:CARAVAN_PARK a skos:Concept;
+  skos:broader pt:ACCOMMODATION;
+  skos:definition "A bounded area in which caravans are, or can be, parked, or where caravan type accommodation can be obtained; domestic facilities may be provided"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:prefLabel "CARAVAN PARK"@en .
+
+pt:PLACE_OF_WORSHIP a skos:Concept;
+  skos:broader pt:CULTURE;
+  skos:definition "Place used for spirtual observation or cermonial purposes"@en;
+  skos:inScheme <https://linked.data.gov.au/def/fsdf/place-type>;
+  skos:narrower pt:ABBEY;
+  skos:prefLabel "PLACE OF WORSHIP"@en .
