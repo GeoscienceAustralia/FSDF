@@ -1,0 +1,28 @@
+# baseURI: https://linked.data.gov.au/def/transport
+# imports: http://linked.data.gov.au/def/loci
+# imports: http://purl.org/dc/terms/
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: transport
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix transport: <https://linked.data.gov.au/def/transport#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/def/transport>
+  a owl:Ontology ;
+  dcterms:contributor <https://www.icsm.gov.au/> ;
+  dcterms:created "2020-11-12"^^xsd:date ;
+  dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:creator <https://orcid.org/0000-0002-4643-7289> ;
+  dcterms:description "This ontology provides a representation of the FSDF Transport theme" ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dcterms:title "FSDF Transport Ontology" ;
+  owl:imports <http://linked.data.gov.au/def/loci> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+.

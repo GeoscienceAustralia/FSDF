@@ -77,7 +77,9 @@ The key extras in the advanced examples are
     - in fact SKOS-Play! can be used to manage any RDF data, and does not need to involve SKOS
 4. use of 'inverse' property references - here `^skos:member`. This allows collection-member relations to be captured one at a time, which is much easier to manage than a comma-separated list in the primary direction, which could have dozens or hundreds of items in the context of some vocabularies
 
-The structure of this vocabulary is much more complex than the simple one above, so requires more analysis and RDF knowledge to set up. 
+For the full details of the SKOS-Play! layout see [https://skos-play.sparna.fr/play/convert#excel-file-structure](https://skos-play.sparna.fr/play/convert#excel-file-structure)
+
+Note that the structure of the vocabulary in this example is much more complex than the simple one discussed above, so requires more analysis and RDF knowledge to set up. 
 
 ## Generating RDF (SKOS) 
 

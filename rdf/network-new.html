@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FSDF Network ontology</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+#pylode {
+    position: fixed;
+    top: 80px;
+    left: -60px;
+    font-size: small;
+    transform: rotate(-90deg);
+    color: grey;
+}
+#pylode a {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #005A9C;
+}
+#pylode a:hover {
+    color: #333;
+}
+
+.cardinality {
+    font-style: italic;
+    color: #aa00aa;
+}
+
+dt {
+    font-weight: bold;
+    padding: 5px 0 5px 0;
+}
+
+ul.hlist {
+    list-style-type: none;
+    border: 1px solid navy;
+    padding:5px;
+    background-color: #F4FFFF;
+}
+
+
+ul.hlist li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.entity {
+    border: 1px solid navy;
+    margin:5px 0 5px 0;
+    padding: 5px;
+}
+
+.entity th {
+    width: 150px;
+    vertical-align: top;
+}
+
+.entity th,
+.entity td {
+    padding-bottom: 20px;
+}
+
+.entity table th {
+    text-align: left;
+}
+
+section#overview img {
+    max-width: 1000px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: left
+}
+h1, h2, h3 {
+    color: #005A9C; background: white
+}
+h1 {
+    font: 170% sans-serif;
+    line-height: 110%;
+}
+h2 {
+    font: 140% sans-serif;
+    margin-top:40px;
+}
+h3 {
+    font: 120% sans-serif;
+    margin-top: 3px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid navy;
+}
+h4 { font: bold 100% sans-serif }
+h5 { font: italic 100% sans-serif }
+h6 { font: small-caps 100% sans-serif }
+
+
+body {
+    padding: 2em 70px 2em 70px;
+    margin: 0;
+    font-family: sans-serif;
+    color: black;
+    background: white;
+    background-position: top left;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: justify;
+}
+
+section {
+    max-width: 1500px;
+}
+
+.figure {
+    margin-bottom: 20px;
+}
+
+:link { color: #00C; background: transparent }
+:visited { color: #609; background: transparent }
+a:active { color: #C00; background: transparent }
+
+.sup-c,
+.sup-op,
+.sup-fp,
+.sup-dp,
+.sup-ap,
+.sup-p,
+.sup-ni {
+    cursor:help;
+    margin-left: 3px;
+}
+
+.sup-c {
+    color:orange;
+}
+
+.sup-op {
+    color:navy;
+}
+
+.sup-fp {
+    color:lightskyblue;
+}
+
+.sup-dp {
+    color:green;
+}
+
+.sup-ap {
+    color:darkred;
+}
+
+.sup-p {
+    color:black;
+}
+
+.sup-ni {
+    color:brown;
+}
+
+code {
+    font-size: large;
+    color: darkred;
+}
+
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://linked.data.gov.au/def/fsdf/network",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/codeRepository": [
+      {
+        "@id": "https://github.com/GeoscienceAustralia/FSDF"
+      }
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>Generic network ontology for FSDF. To be used as the basis for FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Powerlines. </p>\n<p>Adapted from http://inspire.ec.europa.eu/ont/net .</p>"
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "<a href=\"https://creativecommons.org/publicdomain/zero/1.0/\">https://creativecommons.org/publicdomain/zero/1.0/</a>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "FSDF Network ontology"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+<div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">pyLODE</a></div>
+<h1>FSDF Network ontology</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>IRI</dt>
+        <dd><code>https://linked.data.gov.au/def/fsdf/network</code></dd>
+        <dt>Creator(s)</dt>
+        <dd>
+            <a href="https://orcid.org/0000-0002-3884-3420">Simon J D Cox</a><br/>
+        </dd>
+        <dt>Contributors(s)</dt>
+        <dd>
+            <a href="https://orcid.org/0000-0002-4643-7289">Irina Bastrakova</a><br/>
+        </dd>
+        <dt>Created</dt>
+        <dd>2020-11-30</dd>
+        <dt>Modified</dt>
+        <dd>2021-05-13</dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="http://purl.org/dc/terms/">dcterms:</a><br/>
+            <a href="http://www.opengis.net/ont/geosparql">http://www.opengis.net/ont/geosparql</a><br/>
+            <a href="https://linked.data.gov.au/def/fsdf/core">https://linked.data.gov.au/def/fsdf/core</a><br/>
+            <a href="http://www.opengis.net/ont/sf">http://www.opengis.net/ont/sf</a><br/>
+            <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a><br/>
+        </dd>
+        <dt>License</dt>
+        <dd><a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a></dd>
+        <dt>Ontology Source</dt>
+        <dd><a href="network.ttl">RDF (turtle)</a></dd>
+        <dt>Code Repository</dt>
+        <dd><a href="https://github.com/GeoscienceAustralia/FSDF">https://github.com/GeoscienceAustralia/FSDF</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>Generic network ontology for FSDF. To be used as the basis for FSDF network models, including Roads, Railways, Hydrology, Pipelines, Air transport, Powerlines. </p>
+<p>Adapted from http://inspire.ec.europa.eu/ont/net .</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:500px; background-color: black;">&nbsp;</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+<section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Connectiontype">Connection type</a></li>
+        <li><a href="#Crossreference">Cross reference</a></li>
+        <li><a href="#Directedlink">Directed link</a></li>
+        <li><a href="#Direction">Direction</a></li>
+        <li><a href="#Generalisedlink">Generalised link</a></li>
+        <li><a href="#Gradeseparatedcrossing">Grade separated crossing</a></li>
+        <li><a href="#Link">Link</a></li>
+        <li><a href="#Linkreference">Link reference</a></li>
+        <li><a href="#Linksequence">Link sequence</a></li>
+        <li><a href="#Linkset">Link set</a></li>
+        <li><a href="#Network">Network</a></li>
+        <li><a href="#Networkarea">Network area</a></li>
+        <li><a href="#Networkconnection">Network connection</a></li>
+        <li><a href="#Networkelement">Network element</a></li>
+        <li><a href="#Networkproperty">Network property</a></li>
+        <li><a href="#Networkreference">Network reference</a></li>
+        <li><a href="#Node">Node</a></li>
+        <li><a href="#Simplelinearreference">Simple linear reference</a></li>
+        <li><a href="#Simplepointreference">Simple point reference</a></li>
+    </ul>
+    <div class="entity class" id="Connectiontype">
+        <h3>Connection type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#ConnectionType</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#connectiontype">net:type</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Crossreference">
+        <h3>Cross reference<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#CrossReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The cross reference may represent the case where two elements are different representations of the same spatial object.
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 2<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Directedlink">
+        <h3>Directed link<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#DirectedLink</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A link either in its positive or negative direction.
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#consistentlinkdirection?">net:direction</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Direction">
+        <h3>Direction<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#Direction</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#applicabledirection">net:applicableDirection</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Generalisedlink">
+        <h3>Generalised link<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#GeneralisedLink</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Abstract base type representing a linear network element that may be used as a target in linear referencing.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Networkelement">net:NetworkElement</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Linksequence">net:LinkSequence</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Gradeseparatedcrossing">
+        <h3>Grade separated crossing<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#GradeSeparatedCrossing</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicator which of two or more intersecting elements is/are below and which is/are above, to be used if elevation coordinates are not present or cannot be trusted.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Networkelement">net:NetworkElement</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 2<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Link">
+        <h3>Link<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#Link</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Curvilinear network element that connects two positions and represents a homogeneous path in the network. The connected positions may be represented as nodes.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Generalisedlink">net:GeneralisedLink</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#centrelinegeometry">net:centrelineGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="http://www.opengis.net/ont/sf#LineString">sf:LineString</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#endnode">net:endNode</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#startnode">net:startNode</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#fictitiouscentreline?">net:fictitious</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#endnode">net:endNode</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#fictitiouscentreline?">net:fictitious</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#startnode">net:startNode</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#centrelinegeometry">net:centrelineGeometry</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#spokeend">net:spokeEnd</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#spokestart">net:spokeStart</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Linkreference">
+        <h3>Link reference<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#LinkReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
+inv: element.oclIsKindOf(GeneralisedLink)
+
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Networkreference">net:NetworkReference</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Simplepointreference">net:SimplePointReference</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Simplelinearreference">net:SimpleLinearReference</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#applicabledirection">net:applicableDirection</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Linksequence">
+        <h3>Link sequence<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#LinkSequence</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    EXAMPLE A link sequence may represent a route.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Generalisedlink">net:GeneralisedLink</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Directedlink">net:DirectedLink</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Linkset">
+        <h3>Link set<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#LinkSet</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    NOTE This spatial object type supports the aggregation of links to form objects with branches, loops, parallel sequences of links, gaps, etc.
+
+EXAMPLE A dual carriageway road, as a collection of the two link sequences that represent each carriageway.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Networkelement">net:NetworkElement</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#link">net:link</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Generalisedlink">net:GeneralisedLink</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Network">
+        <h3>Network<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#Network</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The reason for collecting certain elements in a certain network may vary (e.g. connected elements for the same mode of transport)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#geographicalname">net:geographicalName</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#innetwork">net:inNetwork</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Networkarea">
+        <h3>Network area<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#NetworkArea</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A 2-dimensional element in a network.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Networkelement">net:NetworkElement</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#geometry">net:geometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="http://www.opengis.net/ont/sf#Polygon">sf:Polygon</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Networkconnection">
+        <h3>Network connection<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#NetworkConnection</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Elements in different networks: /*  All elements have to be in different networks */
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Networkelement">net:NetworkElement</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#connectiontype">net:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 2<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#connectiontype">net:type</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Networkelement">
+        <h3>Network element<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#NetworkElement</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Abstract base type representing an element in a network. Every element in a network provides some function that is of interest in the network.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://linked.data.gov.au/def/fsdf/core#identifier">core:identifier</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://linked.data.gov.au/def/fsdf/core#recordTime">core:recordTime</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="#innetwork">net:inNetwork</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="https://linked.data.gov.au/def/fsdf/core#validTime">core:validTime</a> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Networkconnection">net:NetworkConnection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Generalisedlink">net:GeneralisedLink</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Gradeseparatedcrossing">net:GradeSeparatedCrossing</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Linkset">net:LinkSet</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Networkarea">net:NetworkArea</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#innetwork">net:inNetwork</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#element">net:element</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Networkproperty">
+        <h3>Network property<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#NetworkProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    In the simplest case (NetworkReference), the network property applies to the whole network element. In the case of a Link, the spatial reference may be restricted to part of the Link by using a linear reference. ISO/TC 211 is currently in the early stages of developing a standard for Linear Referencing (ISO 19148). A simple mechanism to express linear references is provided in this version of the network model; it is expected that the model will be extended once ISO 19148 is stable. The current simple model requires for all linear references two expressions representing a distance from the start of the Link along its curve geometry. The network property applies to the part of the Link between fromPosition and toPosition.
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#networkreference">net:networkRef</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Networkreference">
+        <h3>Network reference<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#NetworkReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A reference to a network element.
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Linkreference">net:LinkReference</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#networkreference">net:networkRef</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Node">
+        <h3>Node<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#Node</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    NOTE if a topological representation of the network is used the road node is either a topological connection between two or more links or the termination of a ink. If a geometric representation of the network is used road nodes are represented by points or alternatively another geometric shape. [EuroRoadS]
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Networkelement">net:NetworkElement</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#spokestart">net:spokeStart</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#spokeend">net:spokeEnd</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#geometry">net:geometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="http://www.opengis.net/ont/sf#Point">sf:Point</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#spokestart">net:spokeStart</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#spokeend">net:spokeEnd</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#endnode">net:endNode</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#startnode">net:startNode</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Simplelinearreference">
+        <h3>Simple linear reference<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#SimpleLinearReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A network reference that is restricted to part of a linear network element. The part is the part of the network element between fromPosition and toPosition.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Linkreference">net:LinkReference</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#startposition">net:fromPosition</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#endposition">net:toPosition</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Simplepointreference">
+        <h3>Simple point reference<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#SimplePointReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Linear reference targets must be linear network elements: /*Linear reference targets must be linear network elements. That is, if linear referencing is used or direction is relevant, the target of the network reference shall be a link or a link sequence.*/
+inv: element.oclIsKindOf(GeneralisedLink)
+
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Linkreference">net:LinkReference</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#atposition">net:atPosition</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#applicabledirection">applicable direction</a></li>
+        <li><a href="#centrelinegeometry">centreline geometry</a></li>
+        <li><a href="#element">element</a></li>
+        <li><a href="#endnode">end node</a></li>
+        <li><a href="#geographicalname">geographical name</a></li>
+        <li><a href="#geometry">geometry</a></li>
+        <li><a href="#innetwork">in network</a></li>
+        <li><a href="#link">link</a></li>
+        <li><a href="#networkreference">network reference</a></li>
+        <li><a href="#spokeend">spoke end</a></li>
+        <li><a href="#spokestart">spoke start</a></li>
+        <li><a href="#startnode">start node</a></li>
+        <li><a href="#connectiontype">connection type</a></li>
+    </ul>
+    <div class="entity property" id="applicabledirection">
+        <h3>applicable direction<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#applicableDirection</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    EXAMPLE A speed limit is a property that applies to a direction of the link (or both directions) while a house number is a phenomenon along a link.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Linkreference">net:LinkReference</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Direction">net:Direction</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="centrelinegeometry">
+        <h3>centreline geometry<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#centrelineGeometry</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The geometry that represents the centreline of the link.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/sf#LineString">sf:LineString</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="element">
+        <h3>element<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#element</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The collection of elements that constitutes the network.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="#Crossreference">net:CrossReference</a><sup class="sup-c" title="class">c</sup> or <a href="#Networkreference">net:NetworkReference</a><sup class="sup-c" title="class">c</sup> or <a href="#Network">net:Network</a><sup class="sup-c" title="class">c</sup> or <a href="#Networkconnection">net:NetworkConnection</a><sup class="sup-c" title="class">c</sup> or <a href="#Gradeseparatedcrossing">net:GradeSeparatedCrossing</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Networkelement">net:NetworkElement</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="endnode">
+        <h3>end node<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#endNode</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The optional end node for this link. The end node may be the same instance as the start node.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="geographicalname">
+        <h3>geographical name<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#geographicalName</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Geographical name for this network.
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    Usually a pn:PlaceName
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="geometry">
+        <h3>geometry<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#geometry</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The location of the node.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="#Networkarea">net:NetworkArea</a><sup class="sup-c" title="class">c</sup> or <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/sf#Geometry">sf:Geometry</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="innetwork">
+        <h3>in network<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#inNetwork</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The networks in which a network element is a member.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Networkelement">net:NetworkElement</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Network">net:Network</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="link">
+        <h3>link<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#link</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    
+	owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#DirectedLink.link> ;
+	owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#LinkSequence.link> ;
+	owl:equivalentProperty <http://inspire.ec.europa.eu/ont/net#LinkSet.link> ;
+
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="#Directedlink">net:DirectedLink</a><sup class="sup-c" title="class">c</sup> or <a href="#Linksequence">net:LinkSequence</a><sup class="sup-c" title="class">c</sup> or <a href="#Linkset">net:LinkSet</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Generalisedlink">net:GeneralisedLink</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="networkreference">
+        <h3>network reference<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#networkRef</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Spatial reference of the network-related property.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Networkproperty">net:NetworkProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Networkreference">net:NetworkReference</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="spokeend">
+        <h3>spoke end<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#spokeEnd</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    NOTE In the INSPIRE context, this spoke property is to be published when this information is published in current exchange formats of the data set.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="spokestart">
+        <h3>spoke start<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#spokeStart</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    NOTE In the INSPIRE context, this spoke property is to be published when this information is published in current exchange formats of the data set.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="startnode">
+        <h3>start node<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#startNode</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The optional start node for this link.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Node">net:Node</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="connectiontype">
+        <h3>connection type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#type</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Categorisation of the network connection.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Networkconnection">net:NetworkConnection</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Connectiontype">net:ConnectionType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#atposition">at position</a></li>
+        <li><a href="#consistentlinkdirection?">consistent link direction?</a></li>
+        <li><a href="#fictitiouscentreline?">fictitious centreline?</a></li>
+        <li><a href="#startposition">start position</a></li>
+        <li><a href="#offsetfromcentreline">offset from centreline</a></li>
+        <li><a href="#endposition">end position</a></li>
+    </ul>
+    <div class="entity property" id="atposition">
+        <h3>at position<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#atPosition</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Position of the point, expressed as the distance from the start of the linear network element along its curve geometry.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Simplepointreference">net:SimplePointReference</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/cdt/ucum">cdt:ucum</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="consistentlinkdirection?">
+        <h3>consistent link direction?<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#direction</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates if the directed link agrees (positive) or disagrees (negative) with the positive direction of the link.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Directedlink">net:DirectedLink</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="fictitiouscentreline?">
+        <h3>fictitious centreline?<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#fictitious</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicator that the centreline geometry of the link is a straight line with no intermediate control points &ndash; unless the straight line represents the geography in the resolution of the data set appropriately.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Link">net:Link</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="startposition">
+        <h3>start position<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#fromPosition</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The start position of the linear element, expressed as the distance from the start of the linear network element along its curve geometry.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Simplelinearreference">net:SimpleLinearReference</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/cdt/ucum">cdt:ucum</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="offsetfromcentreline">
+        <h3>offset from centreline<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#offset</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An offset from the centerline geometry of the generalised link, where applicable; a positive offset is to the right in the direction of the link, a negative offset is to the left.
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/cdt/ucum">cdt:ucum</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="endposition">
+        <h3>end position<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://linked.data.gov.au/def/fsdf/network#toPosition</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The end position of the linear element, expressed as the distance from the start of the linear network element along its curve geometry.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Simplelinearreference">net:SimpleLinearReference</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/cdt/ucum">cdt:ucum</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt><em>default (:)</em></dt>
+        <dd><code>https://linked.data.gov.au/def/fsdf/network#</code></dd>
+        <dt>cdt</dt>
+        <dd><code>https://w3id.org/cdt/</code></dd>
+        <dt>core</dt>
+        <dd><code>https://linked.data.gov.au/def/fsdf/core#</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>geo</dt>
+        <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>net</dt>
+        <dd><code>https://linked.data.gov.au/def/fsdf/network#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>sf</dt>
+        <dd><code>http://www.opengis.net/ont/sf#</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>xml</dt>
+        <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+<section id="legend">
+    <h2>Legend</h2>
+    <table class="entity">
+        <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+        <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+        <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+        <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+        <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+        <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+        <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+    </table>
+</section>
+</body>
+</html>
