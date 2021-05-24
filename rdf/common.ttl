@@ -1,11 +1,11 @@
-# baseURI: https://linked.data.gov.au/def/fsdf/core
+# baseURI: https://linked.data.gov.au/def/fsdf/common
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.w3.org/2006/time
-# prefix: core
+# prefix: common
 
 @prefix cdt: <https://w3id.org/cdt/> .
-@prefix core: <https://linked.data.gov.au/def/fsdf/core#> .
+@prefix common: <https://linked.data.gov.au/def/fsdf/common#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ex: <http://example.org/my/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
@@ -18,197 +18,197 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.data.gov.au/def/fsdf/core>
+<https://linked.data.gov.au/def/fsdf/common>
   a owl:Ontology ;
   dcterms:created "2021-01-13"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:description "A small ontology for the 'core' properties of FSDF, mostly relating to lifecycle, quality, and citation information" ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2021-05-13"^^xsd:date ;
+  dcterms:modified "2021-05-24"^^xsd:date ;
   dcterms:title "FSDF core ontology" ;
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.w3.org/2006/time> ;
   sdo:codeRepository "https://github.com/GeoscienceAustralia/FSDF"^^xsd:anyURI ;
 .
-core:Contact
+common:Contact
   a owl:Class ;
   rdfs:label "contact"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom rdf:langString ;
-      owl:onProperty core:contactInstructions ;
+      owl:onProperty common:contactInstructions ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom rdf:langString ;
-      owl:onProperty core:hoursOfService ;
+      owl:onProperty common:hoursOfService ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:anyURI ;
-      owl:onProperty core:website ;
+      owl:onProperty common:website ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:electronicMailAddress ;
+      owl:onProperty common:electronicMailAddress ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:telephoneFacsimile ;
+      owl:onProperty common:telephoneFacsimile ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:telephoneVoice ;
+      owl:onProperty common:telephoneVoice ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty core:address ;
+      owl:onProperty common:address ;
     ] ;
   skos:definition "Communication channels by which it is possible to gain access to someone or something."@en ;
 .
-core:DocumentCitation
+common:DocumentCitation
   a owl:Class ;
   rdfs:label "document citation"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:anyURI ;
-      owl:onProperty core:link ;
+      owl:onProperty common:link ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:name ;
+      owl:onProperty common:name ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:shortName ;
+      owl:onProperty common:shortName ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:specificReference ;
+      owl:onProperty common:specificReference ;
     ] ;
   skos:definition "Citation for the purposes of unambiguously referencing a document."@en ;
 .
-core:Feature
+common:Feature
   a owl:Class ;
   rdfs:label "FSDF Feature (core attributes)" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty core:featureSource ;
+      owl:onProperty common:featureSource ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty core:name ;
+      owl:onProperty common:name ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty core:operationalStatus ;
+      owl:onProperty common:operationalStatus ;
     ] ;
 .
-core:LegislationCitation
+common:LegislationCitation
   a owl:Class ;
   rdfs:label "legislation citation"@en ;
-  rdfs:subClassOf core:DocumentCitation ;
+  rdfs:subClassOf common:DocumentCitation ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom core:OfficialJournalInformation ;
-      owl:onProperty core:journalCitation ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty common:identificationNumber ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:identificationNumber ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty core:officialDocumentNumber ;
+      owl:onProperty common:officialDocumentNumber ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom skos:Concept ;
-      owl:onProperty core:level ;
+      owl:onProperty common:level ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom common:OfficialJournalInformation ;
+      owl:onProperty common:journalCitation ;
     ] ;
   skos:definition "Citation for the purposes of unambiguously referencing a legal act or a specific part of a legal act."@en ;
   skos:scopeNote "Provide_linkToLegislativeInstrument_or_journalCitation: If the link attribute is void, the journal citation shall be provided." ;
 .
-core:Link
+common:Link
   a owl:Class ;
   rdfs:label "FSDF Link (core attributes)" ;
 .
-core:OfficialJournalInformation
+common:OfficialJournalInformation
   a owl:Class ;
   rdfs:label "official journal information"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:anyURI ;
-      owl:onProperty core:link ;
+      owl:onProperty common:link ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:iSBN ;
+      owl:onProperty common:iSBN ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:iSSN ;
+      owl:onProperty common:iSSN ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty core:officialJournalIdentification ;
+      owl:onProperty common:officialJournalIdentification ;
     ] ;
   skos:definition "Full citation of the location of the legislative instrument within the official journal."@en ;
 .
-core:RelatedParty
+common:RelatedParty
   a owl:Class ;
   rdfs:comment "NOTE 1 A party, typically an individual person, acting as a general point of contact for a resource can be specified without providing any particular role."@en ;
   rdfs:label "related party"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom core:Contact ;
-      owl:onProperty core:contact ;
+      owl:allValuesFrom rdf:langString ;
+      owl:onProperty common:individualName ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom rdf:langString ;
-      owl:onProperty core:individualName ;
+      owl:onProperty common:organisationName ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom rdf:langString ;
-      owl:onProperty core:organisationName ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom rdf:langString ;
-      owl:onProperty core:positionName ;
+      owl:onProperty common:positionName ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom skos:Concept ;
-      owl:onProperty core:role ;
+      owl:onProperty common:role ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom common:Contact ;
+      owl:onProperty common:contact ;
     ] ;
   skos:definition "An organisation or a person with a role related to a resource."@en ;
   skos:scopeNote "individual, organisation or position name shall be provided: At least the individual, organisation or position name shall be provided." ;
 .
-core:Sign
+common:Sign
   a rdfs:Datatype ;
   rdfs:subClassOf rdfs:Resource ;
   owl:oneOf (
@@ -218,7 +218,7 @@ core:Sign
   skos:notation "Sign"^^xsd:NCName ;
   skos:prefLabel "sign"@en ;
 .
-core:ThematicIdentifier
+common:ThematicIdentifier
   a owl:Class ;
   rdfs:comment """Some spatial objects may be assigned multiple unique identifiers. 
 These may have been established to meet data exchange requirements of different reporting obligations at International, European or national levels and/or internal data maintenance requirements."""@en ;
@@ -228,104 +228,104 @@ These may have been established to meet data exchange requirements of different 
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty core:identifierScheme ;
+      owl:onProperty common:identifierScheme ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:onDataRange xsd:string ;
-      owl:onProperty core:identifier ;
+      owl:onProperty common:identifier ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "Thematic identifier to uniquely identify the spatial object."@en ;
 .
-core:address
+common:address
   a owl:ObjectProperty ;
   rdfs:comment "rdfs:subPropertyOf locn:address" ;
-  rdfs:domain core:Contact ;
+  rdfs:domain common:Contact ;
   skos:definition "An address provided as free text."@en ;
 .
-core:attributeDate
+common:attributeDate
   a owl:DatatypeProperty ;
   dcterms:description "This is the date of the latest primary source material used to initially assign, or subsequently change or confirm the value of, one of the attributes of the feature." ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Attribute Date" ;
   rdfs:range xsd:date ;
   rdfs:subPropertyOf dcterms:date ;
 .
-core:attributeSource
+common:attributeSource
   a owl:ObjectProperty ;
   dcterms:description "This is the name of the latest primary source material used to populate the attribute field/s of a feature." ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Attribute Source" ;
   rdfs:subPropertyOf dcterms:source ;
 .
-core:contact
+common:contact
   a owl:ObjectProperty ;
   rdfs:label "contact"@en ;
-  rdfs:range core:Contact ;
+  rdfs:range common:Contact ;
   skos:definition "Contact information for the related party."@en ;
 .
-core:contactInstructions
+common:contactInstructions
   a owl:DatatypeProperty ;
-  rdfs:domain core:Contact ;
+  rdfs:domain common:Contact ;
   rdfs:range rdf:langString ;
   skos:definition "Supplementary instructions on how or when to contact an individual or organisation."@en ;
 .
-core:custodianAgency
+common:custodianAgency
   a owl:ObjectProperty ;
   dcterms:description "The agency or organisation for the source of this feature" ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Custodian Agency" ;
   rdfs:range skos:Concept ;
 .
-core:custodianLicensing
+common:custodianLicensing
   a owl:ObjectProperty ;
   dcterms:description "Specific licensing relating to this feature" ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Custodian Licensing" ;
   rdfs:subPropertyOf dcterms:license ;
 .
-core:electronicMailAddress
+common:electronicMailAddress
   a owl:DatatypeProperty ;
-  rdfs:domain core:Contact ;
+  rdfs:domain common:Contact ;
   rdfs:range xsd:string ;
   skos:definition "An address of the organisation's or individual's electronic mailbox."@en ;
 .
-core:featureDate
+common:featureDate
   a owl:DatatypeProperty ;
   dcterms:description "This is the date of the latest primary source material where the position of a particular feature was added, verified, or subsequently changed." ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Feature Date" ;
   rdfs:range xsd:date ;
   rdfs:subPropertyOf dcterms:date ;
 .
-core:featureSource
+common:featureSource
   a owl:ObjectProperty ;
   dcterms:description "This is the name of the latest primary source used to add, update or verify a features existence or position. In most cases, this would be imagery (satellite, orthophotography, World Imagery)." ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Feature Source" ;
   rdfs:subPropertyOf dcterms:source ;
 .
-core:featureSubType
+common:featureSubType
   a owl:ObjectProperty ;
   dcterms:description "An identifier for the type of feature represented" ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Feature sub-type" ;
   rdfs:subPropertyOf dcterms:type ;
 .
-core:hoursOfService
+common:hoursOfService
   a owl:DatatypeProperty ;
-  rdfs:domain core:Contact ;
+  rdfs:domain common:Contact ;
   rdfs:range rdf:langString ;
   skos:definition "Periods of time when the organisation or individual can be contacted."@en ;
 .
-core:iSBN
+common:iSBN
   a owl:DatatypeProperty ;
   rdfs:label "ISBN"@en ;
   rdfs:range xsd:string ;
   skos:definition "International Standard Book Number (ISBN) is an nine-digit number that uniquely identifies the book in which the legislative instrument was published."@en ;
 .
-core:iSSN
+common:iSSN
   a owl:DatatypeProperty ;
   rdfs:comment """NOTE: Periodical publilcations are issued in successive parts, usually having numerical or chronological designations and required that each serial publication can be uniquely identified.
 
@@ -334,25 +334,25 @@ EXAMPLE: OJ Series in which INSPIRE Directive is published has been assigned the
   rdfs:range xsd:string ;
   skos:definition "The International Standard Serial Number (ISSN) is an eight-digit number that identifies the periodical publication in which the legislative instrument was published."@en ;
 .
-core:identificationNumber
+common:identificationNumber
   a owl:DatatypeProperty ;
   rdfs:comment """EXAMPLE 1: 2007/2/EC is the identification number for the INSPIRE Directive
 
 EXAMPLE 2: 2008/50/EC is the identification number for the CAFE Directive
 
 EXAMPLE 3: 2000/60/EC is the identification number for the  Water Framework Directive"""@en ;
-  rdfs:domain core:LegislationCitation ;
+  rdfs:domain common:LegislationCitation ;
   rdfs:label "identification number"@en ;
   rdfs:range xsd:string ;
   skos:definition "Code used to identify the legislative instrument"@en ;
 .
-core:identifier
+common:identifier
   a owl:DatatypeProperty ;
   rdfs:label "identifier"@en ;
   rdfs:range xsd:string ;
   skos:definition "Unique identifier used to identify the spatial object within the specified identification scheme."@en ;
 .
-core:identifierScheme
+common:identifierScheme
   a owl:DatatypeProperty ;
   rdfs:comment """NOTE 1: Reporting requirements for different environmental legislation mandate that each spatial object is assigned an identifier conforming to specific lexical rules. 
 
@@ -361,62 +361,62 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
   rdfs:range xsd:string ;
   skos:definition "Identifier defining the scheme used to assign the identifier."@en ;
 .
-core:individualName
+common:individualName
   a owl:DatatypeProperty ;
-  rdfs:domain core:RelatedParty ;
+  rdfs:domain common:RelatedParty ;
   rdfs:label "individual name"@en ;
   rdfs:range rdf:langString ;
   skos:definition "Name of the related person."@en ;
 .
-core:journalCitation
+common:journalCitation
   a owl:ObjectProperty ;
   rdfs:label "journal citation"@en ;
-  rdfs:range core:OfficialJournalInformation ;
+  rdfs:range common:OfficialJournalInformation ;
   skos:definition "Citation of the official journal in which the legislation is published."@en ;
 .
-core:legislationTime
+common:legislationTime
   a owl:ObjectProperty ;
-  rdfs:domain core:LegislationCitation ;
+  rdfs:domain common:LegislationCitation ;
   rdfs:label "legislation period"@en ;
   rdfs:range time:Interval ;
   skos:definition "Interval/period that the legislative instrument was in force."@en ;
 .
-core:level
+common:level
   a owl:ObjectProperty ;
-  rdfs:domain core:LegislationCitation ;
+  rdfs:domain common:LegislationCitation ;
   rdfs:label "name"@en ;
   rdfs:range skos:Concept ;
   rdfs:seeAlso <http://inspire.ec.europa.eu/codeList/LegislationLevelValue> ;
   skos:definition "The level at which the legislative instrument is adopted."@en ;
 .
-core:link
+common:link
   a owl:DatatypeProperty ;
   rdfs:label "link to online version"@en ;
   rdfs:range xsd:anyURI ;
   skos:definition "Link to an online version of the document"@en ;
 .
-core:loadingDate
+common:loadingDate
   a owl:DatatypeProperty ;
   dcterms:description "Date of data loaded into national model" ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Loading Date" ;
   rdfs:range xsd:date ;
   rdfs:subPropertyOf dcterms:date ;
 .
-core:name
+common:name
   a owl:DatatypeProperty ;
   dcterms:description "The name of the feature" ;
   rdfs:comment """NOTE	For legal documents, this should be the official name assigned to the legislative instrument.
 
 EXAMPLE The official legal name for the INSPIRE Directive is \"Directive 2007/2/EC of the European Parliament and of the Council of 14 March 2007 establishing an Infrastructure for Spatial Information in the European Community (INSPIRE)\""""@en ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Name" ;
   rdfs:label "name"@en ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf rdfs:label ;
   skos:definition "Name of the resource."@en ;
 .
-core:officialDocumentNumber
+common:officialDocumentNumber
   a owl:DatatypeProperty ;
   rdfs:comment """NOTE: An official document number may be assigned to uniquely identify the legislative instrument.
 
@@ -425,7 +425,7 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation"""@en
   rdfs:range xsd:string ;
   skos:definition "Official document number used to uniquely identify the legislative instrument."@en ;
 .
-core:officialJournalIdentification
+common:officialJournalIdentification
   a owl:DatatypeProperty ;
   rdfs:comment "EXAMPLE: Official Journal of European Union (OJEU), L108, Volume 50, 1-14"@en ;
   rdfs:label "official journal identification"@en ;
@@ -437,48 +437,48 @@ core:officialJournalIdentification
 	<li>Page number(s)</li>
 </ul>"""@en ;
 .
-core:operationalStatus
+common:operationalStatus
   a owl:ObjectProperty ;
   dcterms:description " The Operational status of the feature" ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Operational Status" ;
   rdfs:range skos:Concept ;
 .
-core:organisationName
+common:organisationName
   a owl:DatatypeProperty ;
-  rdfs:domain core:RelatedParty ;
+  rdfs:domain common:RelatedParty ;
   rdfs:label "organisation name"@en ;
   rdfs:range rdf:langString ;
   skos:definition "Name of the related organisation."@en ;
 .
-core:planimetricAccuracy
+common:planimetricAccuracy
   a owl:DatatypeProperty ;
   dcterms:description "The standard deviation of the horizontal positional accuracy" ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Planimetric Accuracy" ;
   rdfs:range cdt:ucum ;
 .
-core:positionName
+common:positionName
   a owl:DatatypeProperty ;
-  rdfs:domain core:RelatedParty ;
+  rdfs:domain common:RelatedParty ;
   rdfs:label "position name"@en ;
   rdfs:range rdf:langString ;
   skos:definition "Position of the party in relation to a resource, such as head of department."@en ;
 .
-core:recordTime
+common:recordTime
   a owl:ObjectProperty ;
   rdfs:comment "Time interval (period) at which this version of the spatial object was inserted or changed in the spatial data set" ;
   rdfs:label "Record time" ;
   rdfs:range time:Interval ;
 .
-core:role
+common:role
   a owl:ObjectProperty ;
-  rdfs:domain core:RelatedParty ;
+  rdfs:domain common:RelatedParty ;
   rdfs:range skos:Concept ;
   rdfs:seeAlso <http://inspire.ec.europa.eu/codeList/PartyRoleValue> ;
   skos:definition "Role(s) of the party in relation to a resource, such as owner."@en ;
 .
-core:shortName
+common:shortName
   a owl:DatatypeProperty ;
   rdfs:comment """NOTE	For legal documents, this should be a short name or alternative title commonly used to identify the legislation.
 
@@ -491,68 +491,56 @@ EXAMPLE  3: Water Framework Directive the short name for \"Directive 2000/60/EC 
   rdfs:range xsd:string ;
   skos:definition "Short name or alternative title of the resource."@en ;
 .
-core:sourceJurisdiction
+common:sourceJurisdiction
   a owl:ObjectProperty ;
   dcterms:description "The jurisdiction of the source feature" ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Source Jurisdiction" ;
   rdfs:range skos:Concept ;
 .
-core:sourceUFI
+common:sourceUFI
   a owl:DatatypeProperty ;
   dcterms:description "The unique identifier of the feature as represented in the source " ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Source UFI" ;
   rdfs:subPropertyOf dcterms:identifier ;
 .
-core:specificReference
+common:specificReference
   a owl:DatatypeProperty ;
   rdfs:comment "EXAMPLE For legal documents, this attribute can contain a reference to article(s) that specify a specific requirement or obligation."@en ;
   rdfs:label "specific reference"@en ;
   rdfs:range xsd:string ;
   skos:definition "Reference to a specific part of the document."@en ;
 .
-core:telephoneFacsimile
+common:telephoneFacsimile
   a owl:DatatypeProperty ;
-  rdfs:domain core:Contact ;
+  rdfs:domain common:Contact ;
   rdfs:range xsd:string ;
   skos:definition "Number of a facsimile machine of the organisation or individual."@en ;
 .
-core:telephoneVoice
+common:telephoneVoice
   a owl:DatatypeProperty ;
-  rdfs:domain core:Contact ;
+  rdfs:domain common:Contact ;
   rdfs:range xsd:string ;
   skos:definition "Telephone number of the organisation or individual."@en ;
 .
-core:validTime
+common:validTime
   a owl:ObjectProperty ;
   rdfs:comment "Time interval (period) at which this version of the object was/will be valid in the world" ;
   rdfs:label "Valid time" ;
   rdfs:range time:Interval ;
 .
-core:verticalAccuracy
+common:verticalAccuracy
   a owl:DatatypeProperty ;
   dcterms:description "The standard deviation of the vertical positional accuracy" ;
-  rdfs:domain core:Feature ;
+  rdfs:domain common:Feature ;
   rdfs:label "Vertical Accuracy" ;
   rdfs:range cdt:ucum ;
 .
-core:website
+common:website
   a owl:DatatypeProperty ;
   rdfs:range xsd:anyURI ;
   skos:definition "Pages provided on the World Wide Web by the organisation or individual."@en ;
-.
-cdt:ucum
-  a rdfs:Datatype ;
-  rdfs:comment "scaled number, expressed as decimal-space-UCUMcode" ;
-  rdfs:isDefinedBy <https://ci.mines-stetienne.fr/lindt/v3/custom_datatypes> ;
-  skos:definition """UCUM Datatype - Datatype to encode measurements in a simple literal.
-
-Lexical space - Concatenation of the lexical form of an xsd:decimal, optionally followed by e or E and the lexical form of an xsd:integer, at least one space, and a unit expression constructed using The Unified Code for Units of Measure code system.
-
-Value space-	The set of pairs (v, u) such that v is a real number and u is any unit with magnitude 1 regarding the base units of Section 4.2 of [UCUM].
-
-Lexical-to-value mapping - The first part of the lexical form defines a number v = m × 10e where m is represented by the mandatory xsd:decimal and e is represented by the optional xsd:integer, or equal to 0 if omitted. The second part of the lexical form defines a unit u = r·b where r is the magnitude of u regarding the base units of Section 4.2 of [UCUM]. The lexical-to-value mapping maps the lexical form to the pair (v × r, b).""" ;
 .
 <https://orcid.org/0000-0002-3884-3420>
   a sdo:Person ;
@@ -565,4 +553,16 @@ Lexical-to-value mapping - The first part of the lexical form defines a number v
   sdo:affiliation <https://linked.data.gov.au/org/ga> ;
   sdo:identifier "https://orcid.org/0000-0002-4643-7289"^^xsd:anyURI ;
   sdo:name "Irina Bastrakova" ;
+.
+cdt:ucum
+  a rdfs:Datatype ;
+  rdfs:comment "scaled number, expressed as decimal-space-UCUMcode" ;
+  rdfs:isDefinedBy <https://ci.mines-stetienne.fr/lindt/v3/custom_datatypes> ;
+  skos:definition """UCUM Datatype - Datatype to encode measurements in a simple literal.
+
+Lexical space - Concatenation of the lexical form of an xsd:decimal, optionally followed by e or E and the lexical form of an xsd:integer, at least one space, and a unit expression constructed using The Unified Code for Units of Measure code system.
+
+Value space-	The set of pairs (v, u) such that v is a real number and u is any unit with magnitude 1 regarding the base units of Section 4.2 of [UCUM].
+
+Lexical-to-value mapping - The first part of the lexical form defines a number v = m × 10e where m is represented by the mandatory xsd:decimal and e is represented by the optional xsd:integer, or equal to 0 if omitted. The second part of the lexical form defines a unit u = r·b where r is the magnitude of u regarding the base units of Section 4.2 of [UCUM]. The lexical-to-value mapping maps the lexical form to the pair (v × r, b).""" ;
 .

@@ -1,8 +1,9 @@
-# baseURI: https://linked.data.gov.au/def/fsdf/common
+# baseURI: https://linked.data.gov.au/def/fsdf/code
 # imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
+# prefix: code
 
-@prefix common: <https://linked.data.gov.au/def/fsdf/common/> .
+@prefix code: <https://linked.data.gov.au/def/fsdf/code/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -10,105 +11,106 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.data.gov.au/def/fsdf/common>
+<https://linked.data.gov.au/def/fsdf/code>
   a owl:Ontology ;
   a skos:ConceptScheme ;
   dcterms:created "2020-10-28"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:modified "2021-05-24"^^xsd:date ;
   rdfs:comment "Common codelists used across multiple FSDF datasets"@en ;
   owl:imports dcterms: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   skos:prefLabel "FSDF Common Codes"@en ;
 .
-common:abandoned
+code:abandoned
   a skos:Concept ;
   skos:definition "Not in operation due to it being non-functional and operation is not scheduled to be restored"@en ;
   skos:prefLabel "Abandoned"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:below-ground
+code:below-ground
   a skos:Concept ;
   skos:definition "The entire feature is completely buried below the ground (terrain) surface."@en ;
   skos:prefLabel "Below ground"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:decommissioned
+code:decommissioned
   a skos:Concept ;
   skos:definition "The infrastructure has been removed form service and has been or will be dismantled"@en ;
   skos:prefLabel "Decommissioned"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:disused
+code:disused
   a skos:Concept ;
   skos:definition "Temporarily not in operation due to it being non-functional and operation is scheduled to be restored"@en ;
   skos:prefLabel "Disused"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:elevated
+code:elevated
   a skos:Concept ;
   skos:definition "Located above the ground (terrain) or the surface of the waterbody."@en ;
   skos:prefLabel "Elevated"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:non-operational
+code:non-operational
   a skos:Concept ;
   skos:definition "The feature is not currently operating"@en ;
   skos:prefLabel "Non-Operational"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:on-ground
+code:on-ground
   a skos:Concept ;
   skos:definition "Located on the ground (terrain) or the surface of the waterbody."@en ;
   skos:prefLabel "On ground"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:operational
+code:operational
   a skos:Concept ;
   skos:definition "Fully capable of operation"@en ;
   skos:prefLabel "Operational"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:operational-status
+code:operational-status
   a skos:Collection ;
-  skos:member common:abandoned ;
-  skos:member common:decommissioned ;
-  skos:member common:disused ;
-  skos:member common:non-operational ;
-  skos:member common:operational ;
-  skos:member common:other ;
-  skos:member common:proposed ;
-  skos:member common:under-construction ;
-  skos:member common:unknown ;
+  skos:member code:abandoned ;
+  skos:member code:decommissioned ;
+  skos:member code:disused ;
+  skos:member code:non-operational ;
+  skos:member code:operational ;
+  skos:member code:other ;
+  skos:member code:proposed ;
+  skos:member code:under-construction ;
+  skos:member code:unknown ;
   skos:prefLabel "Operational status"@en ;
 .
-common:other
+code:other
   a skos:Concept ;
   skos:definition "The attribute value is known, but is not currently a valid member of the attribute range"@en ;
   skos:prefLabel "Other"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:proposed
+code:proposed
   a skos:Concept ;
   skos:definition "Proposed infrastructure"@en ;
   skos:prefLabel "Proposed"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:relationship-to-ground
+code:relationship-to-ground
   a skos:Collection ;
-  skos:member common:below-ground ;
-  skos:member common:elevated ;
-  skos:member common:on-ground ;
+  skos:member code:below-ground ;
+  skos:member code:elevated ;
+  skos:member code:on-ground ;
   skos:prefLabel "Relationship to ground"@en ;
 .
-common:under-construction
+code:under-construction
   a skos:Concept ;
   skos:definition "The feature is currently being built"@en ;
   skos:prefLabel "Under Construction"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .
-common:unknown
+code:unknown
   a skos:Concept ;
   skos:definition "There is no information specified regarding the attribute value"@en ;
   skos:prefLabel "Unknown"@en ;
-  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/common> ;
+  skos:topConceptOf <https://linked.data.gov.au/def/fsdf/code> ;
 .

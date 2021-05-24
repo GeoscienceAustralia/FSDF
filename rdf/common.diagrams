@@ -68,10 +68,10 @@
         >239</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >52</cd:x>
-        <cd:class rdf:resource="https://linked.data.gov.au/def/fsdf/core#Feature"/>
+        <cd:class rdf:resource="https://linked.data.gov.au/def/fsdf/common#Feature"/>
       </cd:URINode>
     </cd:nodes>
-    <cd:selectedResource rdf:resource="https://linked.data.gov.au/def/fsdf/core#Feature"/>
-    <rdfs:label>core:Feature Diagram</rdfs:label>
+    <cd:selectedResource rdf:resource="https://linked.data.gov.au/def/fsdf/common#Feature"/>
+    <rdfs:label>common:Feature Diagram</rdfs:label>
   </cd:Diagram>
 </rdf:RDF>
