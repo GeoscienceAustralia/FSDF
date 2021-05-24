@@ -22,10 +22,10 @@
   a owl:Ontology ;
   dcterms:created "2021-01-13"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
-  dcterms:description "A small ontology for the 'core' properties of FSDF, mostly relating to lifecycle, quality, and citation information" ;
+  dcterms:description "A small ontology for the 'common' properties of FSDF, mostly relating to lifecycle, quality, and citation information" ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:modified "2021-05-24"^^xsd:date ;
-  dcterms:title "FSDF core ontology" ;
+  dcterms:title "FSDF common elements ontology" ;
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.w3.org/2006/time> ;

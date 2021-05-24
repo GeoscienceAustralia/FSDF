@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FSDF core ontology</title>
+    <title>FSDF common elements ontology</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
+EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
@@ -132,8 +135,8 @@
         .sup-ap,
         .sup-p,
         .sup-ni,
-        .sup-cp,
-        .sup-cl {
+        .sup-con,
+        .sup-col {
             cursor:help;
             margin-left: 3px;
         }
@@ -166,11 +169,11 @@
             color:brown;
         }
 
-        .sup-cp {
+        .sup-con {
             color:orange;
         }
 
-        .sup-cl {
+        .sup-col {
             color:darkred;
         }
 
@@ -200,7 +203,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>A small ontology for the 'core' properties of FSDF, mostly relating to lifecycle, quality, and citation information</p>"
+        "@value": "<p>A small ontology for the 'common' properties of FSDF, mostly relating to lifecycle, quality, and citation information</p>"
       }
     ],
     "https://schema.org/license": [
@@ -210,7 +213,7 @@
     ],
     "https://schema.org/name": [
       {
-        "@value": "FSDF core ontology"
+        "@value": "FSDF common elements ontology"
       }
     ]
   }
@@ -220,9 +223,9 @@
 <body>
   <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.8.6</span>
+    <span style="font-size:smaller;">2.9.3</span>
   </div>
-  <h1>FSDF core ontology</h1>
+  <h1>FSDF common elements ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
     <dl>
@@ -232,7 +235,8 @@
         <dd>
             
     <a href="https://orcid.org/0000-0002-3884-3420">Simon J D Cox</a>
-    <a href="https://orcid.org/0000-0002-3884-3420"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    <a href="">
+  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Orcid logo</title>
@@ -250,12 +254,13 @@
             </g>
         </g>
     </g>
-</svg></a><br/>
+  </svg>
+</a><br/>
         </dd>
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
         <dd>2021-01-13</dd>
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
-        <dd>2021-05-13</dd>
+        <dd>2021-05-24</dd>
         <dt>Imports</dt>
         <dd>
             <a href="http://purl.org/dc/elements/1.1/">http://purl.org/dc/elements/1.1/</a><br/>
@@ -265,13 +270,13 @@
         <dt>License</dt>
         <dd><a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a></dd>
         <dt>Ontology RDF</dt>
-        <dd><a href="rdf/core.ttl">RDF (turtle)</a></dd>
+        <dd><a href="rdf/common.ttl">RDF (turtle)</a></dd>
         <dt>Code Repository</dt>
         <dd><a href="https://github.com/GeoscienceAustralia/FSDF">https://github.com/GeoscienceAustralia/FSDF</a></dd>
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>A small ontology for the 'core' properties of FSDF, mostly relating to lifecycle, quality, and citation information</p>
+        <p>A small ontology for the 'common' properties of FSDF, mostly relating to lifecycle, quality, and citation information</p>
     </div>
 </section>
 <section id="toc">
@@ -292,21 +297,24 @@
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
--->
+--> 
   <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a></li>
-        <li><a href="#FSDFLink(coreattributes)">FSDF Link (core attributes)</a></li>
-        <li><a href="#Contact">contact</a></li>
-        <li><a href="#documentcitation">document citation</a></li>
-        <li><a href="#legislationcitation">legislation citation</a></li>
-        <li><a href="#officialjournalinformation">official journal information</a></li>
-        <li><a href="#relatedparty">related party</a></li>
-        <li><a href="#thematicidentifier">thematic identifier</a></li>
+      <li><a href="#Contact">contact</a></li>
+      <li><a href="#documentcitation">document citation</a></li>
+      <li><a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a></li>
+      <li><a href="#legislationcitation">legislation citation</a></li>
+      <li><a href="#FSDFLink(coreattributes)">FSDF Link (core attributes)</a></li>
+      <li><a href="#officialjournalinformation">official journal information</a></li>
+      <li><a href="#relatedparty">related party</a></li>
+      <li><a href="#thematicidentifier">thematic identifier</a></li>
     </ul>
     <div class="entity class" id="Contact">
-        <h3>contact<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          contact<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Contact" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -327,36 +335,39 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hoursOfService">common:hoursOfService</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#telephoneVoice">common:telephoneVoice</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#telephoneFacsimile">common:telephoneFacsimile</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#contactInstructions">common:contactInstructions</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#website">common:website</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#electronicMailAddress">common:electronicMailAddress</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#address">common:address</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#telephoneFacsimile">telephoneFacsimile</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hoursOfService">hoursOfService</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#contactInstructions">contactInstructions</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#electronicMailAddress">electronicMailAddress</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#address">address</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#telephoneVoice">telephoneVoice</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#website">website</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#address">common:address</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#contactInstructions">common:contactInstructions</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#telephoneVoice">common:telephoneVoice</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#telephoneFacsimile">common:telephoneFacsimile</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#electronicMailAddress">common:electronicMailAddress</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#hoursOfService">common:hoursOfService</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#telephoneFacsimile">telephoneFacsimile</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#contactInstructions">contactInstructions</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#telephoneVoice">telephoneVoice</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hoursOfService">hoursOfService</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#electronicMailAddress">electronicMailAddress</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#address">address</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#contact">common:contact</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#contact">contact</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="documentcitation">
-        <h3>document citation<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          document citation<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#documentcitation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -377,22 +388,25 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#shortname">common:shortName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#linktoonlineversion">common:link</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#specificreference">common:specificReference</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Name">common:name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#specificreference">specific reference</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#shortname">short name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#linktoonlineversion">link to online version</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Name">Name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#legislationcitation">common:LegislationCitation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#legislationcitation">legislation citation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="FSDFFeature(coreattributes)">
-        <h3>FSDF Feature (core attributes)<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          FSDF Feature (core attributes)<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#FSDFFeature(coreattributes)" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -407,34 +421,37 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#OperationalStatus">common:operationalStatus</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#FeatureSource">common:featureSource</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#Name">common:name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#OperationalStatus">Operational Status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Name">Name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#FeatureSource">Feature Source</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#Featuresub-type">common:featureSubType</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#SourceJurisdiction">common:sourceJurisdiction</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#OperationalStatus">common:operationalStatus</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#FeatureSource">common:featureSource</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#VerticalAccuracy">common:verticalAccuracy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#CustodianAgency">common:custodianAgency</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#LoadingDate">common:loadingDate</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#SourceUFI">common:sourceUFI</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#FeatureDate">common:featureDate</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#AttributeSource">common:attributeSource</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#Name">common:name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#PlanimetricAccuracy">common:planimetricAccuracy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#AttributeDate">common:attributeDate</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#CustodianLicensing">common:custodianLicensing</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#LoadingDate">Loading Date</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#FeatureDate">Feature Date</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#CustodianLicensing">Custodian Licensing</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#PlanimetricAccuracy">Planimetric Accuracy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#AttributeDate">Attribute Date</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#SourceJurisdiction">Source Jurisdiction</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Name">Name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#CustodianAgency">Custodian Agency</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#FeatureSource">Feature Source</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#AttributeSource">Attribute Source</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#VerticalAccuracy">Vertical Accuracy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#SourceUFI">Source UFI</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#OperationalStatus">Operational Status</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Featuresub-type">Feature sub-type</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="legislationcitation">
-        <h3>legislation citation<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          legislation citation<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#legislationcitation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -447,7 +464,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Usage Note</th>
+                <th>Scope Notes</th>
                 <td>
                     <p>Provide_linkToLegislativeInstrument_or_journalCitation: If the link attribute is void, the journal citation shall be provided.</p>
                 </td>
@@ -455,30 +472,33 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#documentcitation">common:DocumentCitation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#documentcitation">document citation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#name">common:level</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#journalcitation">common:journalCitation</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#officialjournalinformation">common:OfficialJournalInformation</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#officialdocumentnumber">common:officialDocumentNumber</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#identificationnumber">common:identificationNumber</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#identificationnumber">identification number</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#officialdocumentnumber">official document number</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#name">name</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#journalcitation">journal citation</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#officialjournalinformation">official journal information</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#identificationnumber">common:identificationNumber</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#legislationperiod">common:legislationTime</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#name">common:level</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#identificationnumber">identification number</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#name">name</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#legislationperiod">legislation period</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="FSDFLink(coreattributes)">
-        <h3>FSDF Link (core attributes)<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          FSDF Link (core attributes)<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#FSDFLink(coreattributes)" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -487,7 +507,10 @@
         </table>
     </div>
     <div class="entity class" id="officialjournalinformation">
-        <h3>official journal information<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          official journal information<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#officialjournalinformation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -508,22 +531,25 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#linktoonlineversion">common:link</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#officialjournalidentification">common:officialJournalIdentification</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#ISBN">common:iSBN</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#ISSN">common:iSSN</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#officialjournalidentification">official journal identification</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#linktoonlineversion">link to online version</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ISBN">ISBN</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ISSN">ISSN</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#journalcitation">common:journalCitation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#journalcitation">journal citation</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="relatedparty">
-        <h3>related party<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          related party<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#relatedparty" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -532,11 +558,11 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>An organisation or a person with a role related to a resource.</p>
+                    <p>NOTE 1 A party, typically an individual person, acting as a general point of contact for a resource can be specified without providing any particular role.</p>
                 </td>
             </tr>
             <tr>
-                <th>Usage Note</th>
+                <th>Scope Notes</th>
                 <td>
                     <p>individual, organisation or position name shall be provided: At least the individual, organisation or position name shall be provided.</p>
                 </td>
@@ -550,26 +576,29 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#positionname">common:positionName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#role">common:role</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#contact">common:contact</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Contact">common:Contact</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#organisationname">common:organisationName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#individualname">common:individualName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#role">role</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#individualname">individual name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#positionname">position name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#organisationname">organisation name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#contact">contact</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Contact">contact</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#positionname">common:positionName</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#individualname">common:individualName</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#organisationname">common:organisationName</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#role">common:role</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#individualname">individual name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#organisationname">organisation name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#role">role</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#positionname">position name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="thematicidentifier">
-        <h3>thematic identifier<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          thematic identifier<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#thematicidentifier" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -590,8 +619,8 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#identifier">common:identifier</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#identifierscheme">common:identifierScheme</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#identifierscheme">identifier scheme</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#identifier">identifier</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
         </table>
@@ -617,7 +646,9 @@
         <li><a href="#Validtime">Valid time</a></li>
     </ul>
     <div class="entity property" id="address">
-        <h3>address<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>address<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#address" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -626,19 +657,21 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    rdfs:subPropertyOf locn:address
+                    <p>An address provided as free text.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Contact">common:Contact</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Contact">contact</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="AttributeSource">
-        <h3>Attribute Source<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>Attribute Source<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#AttributeSource" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -647,7 +680,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    This is the name of the latest primary source material used to populate the attribute field/s of a feature.
+                    <p>This is the name of the latest primary source material used to populate the attribute field/s of a feature.</p>
                 </td>
             </tr>
             <tr>
@@ -659,13 +692,15 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="contact">
-        <h3>contact<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>contact<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#contact" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -674,19 +709,21 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    Contact information for the related party.
+                    <p>Contact information for the related party.</p>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Contact">common:Contact</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://linked.data.gov.au/def/fsdf/common#Contact">https://linked.data.gov.au/def/fsdf/common#Contact</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="CustodianAgency">
-        <h3>Custodian Agency<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>Custodian Agency<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#CustodianAgency" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -695,13 +732,13 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    The agency or organisation for the source of this feature
+                    <p>The agency or organisation for the source of this feature</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -713,7 +750,9 @@
         </table>
     </div>
     <div class="entity property" id="CustodianLicensing">
-        <h3>Custodian Licensing<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>Custodian Licensing<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#CustodianLicensing" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -722,7 +761,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    Specific licensing relating to this feature
+                    <p>Specific licensing relating to this feature</p>
                 </td>
             </tr>
             <tr>
@@ -734,13 +773,15 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="FeatureSource">
-        <h3>Feature Source<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>Feature Source<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#FeatureSource" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -749,7 +790,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    This is the name of the latest primary source used to add, update or verify a features existence or position. In most cases, this would be imagery (satellite, orthophotography, World Imagery).
+                    <p>This is the name of the latest primary source used to add, update or verify a features existence or position. In most cases, this would be imagery (satellite, orthophotography, World Imagery).</p>
                 </td>
             </tr>
             <tr>
@@ -761,13 +802,15 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="Featuresub-type">
-        <h3>Feature sub-type<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>Feature sub-type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#Featuresub-type" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -776,7 +819,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    An identifier for the type of feature represented
+                    <p>An identifier for the type of feature represented</p>
                 </td>
             </tr>
             <tr>
@@ -788,13 +831,15 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="journalcitation">
-        <h3>journal citation<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>journal citation<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#journalcitation" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -803,19 +848,21 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    Citation of the official journal in which the legislation is published.
+                    <p>Citation of the official journal in which the legislation is published.</p>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#officialjournalinformation">common:OfficialJournalInformation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://linked.data.gov.au/def/fsdf/common#OfficialJournalInformation">https://linked.data.gov.au/def/fsdf/common#OfficialJournalInformation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="legislationperiod">
-        <h3>legislation period<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>legislation period<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#legislationperiod" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -824,13 +871,13 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    Interval/period that the legislative instrument was in force.
+                    <p>Interval/period that the legislative instrument was in force.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#legislationcitation">common:LegislationCitation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#legislationcitation">legislation citation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -842,7 +889,9 @@
         </table>
     </div>
     <div class="entity property" id="name">
-        <h3>name<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>name<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#name" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -851,13 +900,13 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    The level at which the legislative instrument is adopted.
+                    <p>The level at which the legislative instrument is adopted.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#legislationcitation">common:LegislationCitation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#legislationcitation">legislation citation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -869,7 +918,9 @@
         </table>
     </div>
     <div class="entity property" id="OperationalStatus">
-        <h3>Operational Status<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>Operational Status<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#OperationalStatus" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -878,13 +929,13 @@
             <tr>
                 <th>Description</th>
                 <td>
-                     The Operational status of the feature
+                    <p>The Operational status of the feature</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -896,7 +947,9 @@
         </table>
     </div>
     <div class="entity property" id="Recordtime">
-        <h3>Record time<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>Record time<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#Recordtime" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -905,7 +958,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    Time interval (period) at which this version of the spatial object was inserted or changed in the spatial data set
+                    <p>Time interval (period) at which this version of the spatial object was inserted or changed in the spatial data set</p>
                 </td>
             </tr>
             <tr>
@@ -917,7 +970,9 @@
         </table>
     </div>
     <div class="entity property" id="role">
-        <h3>role<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>role<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#role" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -926,13 +981,13 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    Role(s) of the party in relation to a resource, such as owner.
+                    <p>Role(s) of the party in relation to a resource, such as owner.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#relatedparty">common:RelatedParty</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#relatedparty">related party</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -944,7 +999,9 @@
         </table>
     </div>
     <div class="entity property" id="SourceJurisdiction">
-        <h3>Source Jurisdiction<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>Source Jurisdiction<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#SourceJurisdiction" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -953,13 +1010,13 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    The jurisdiction of the source feature
+                    <p>The jurisdiction of the source feature</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -971,7 +1028,9 @@
         </table>
     </div>
     <div class="entity property" id="Validtime">
-        <h3>Valid time<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>Valid time<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#Validtime" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -980,7 +1039,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    Time interval (period) at which this version of the object was/will be valid in the world
+                    <p>Time interval (period) at which this version of the object was/will be valid in the world</p>
                 </td>
             </tr>
             <tr>
@@ -1024,7 +1083,9 @@
         <li><a href="#website">website</a></li>
     </ul>
     <div class="entity property" id="AttributeDate">
-        <h3>Attribute Date<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>Attribute Date<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#AttributeDate" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1033,7 +1094,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    This is the date of the latest primary source material used to initially assign, or subsequently change or confirm the value of, one of the attributes of the feature.
+                    <p>This is the date of the latest primary source material used to initially assign, or subsequently change or confirm the value of, one of the attributes of the feature.</p>
                 </td>
             </tr>
             <tr>
@@ -1045,7 +1106,7 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1057,7 +1118,9 @@
         </table>
     </div>
     <div class="entity property" id="contactInstructions">
-        <h3>contactInstructions<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>contactInstructions<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#contactInstructions" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1066,13 +1129,13 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    Supplementary instructions on how or when to contact an individual or organisation.
+                    <p>Supplementary instructions on how or when to contact an individual or organisation.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Contact">common:Contact</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Contact">contact</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1084,7 +1147,9 @@
         </table>
     </div>
     <div class="entity property" id="electronicMailAddress">
-        <h3>electronicMailAddress<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>electronicMailAddress<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#electronicMailAddress" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1093,13 +1158,13 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    An address of the organisation's or individual's electronic mailbox.
+                    <p>An address of the organisation's or individual's electronic mailbox.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Contact">common:Contact</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Contact">contact</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1111,7 +1176,9 @@
         </table>
     </div>
     <div class="entity property" id="FeatureDate">
-        <h3>Feature Date<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>Feature Date<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#FeatureDate" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1120,7 +1187,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    This is the date of the latest primary source material where the position of a particular feature was added, verified, or subsequently changed.
+                    <p>This is the date of the latest primary source material where the position of a particular feature was added, verified, or subsequently changed.</p>
                 </td>
             </tr>
             <tr>
@@ -1132,7 +1199,7 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1144,7 +1211,9 @@
         </table>
     </div>
     <div class="entity property" id="hoursOfService">
-        <h3>hoursOfService<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>hoursOfService<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hoursOfService" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1153,13 +1222,13 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    Periods of time when the organisation or individual can be contacted.
+                    <p>Periods of time when the organisation or individual can be contacted.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Contact">common:Contact</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Contact">contact</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1171,7 +1240,9 @@
         </table>
     </div>
     <div class="entity property" id="ISBN">
-        <h3>ISBN<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>ISBN<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#ISBN" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1180,7 +1251,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    International Standard Book Number (ISBN) is an nine-digit number that uniquely identifies the book in which the legislative instrument was published.
+                    <p>International Standard Book Number (ISBN) is an nine-digit number that uniquely identifies the book in which the legislative instrument was published.</p>
                 </td>
             </tr>
             <tr>
@@ -1192,7 +1263,9 @@
         </table>
     </div>
     <div class="entity property" id="ISSN">
-        <h3>ISSN<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>ISSN<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#ISSN" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1201,11 +1274,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    NOTE: Periodical publilcations are issued in successive parts, usually having numerical or chronological designations and required that each serial publication can be uniquely identified.
-
-
-
-EXAMPLE: OJ Series in which INSPIRE Directive is published has been assigned the ISSN: 1725-2555
+                    <p>The International Standard Serial Number (ISSN) is an eight-digit number that identifies the periodical publication in which the legislative instrument was published.</p>
                 </td>
             </tr>
             <tr>
@@ -1217,7 +1286,9 @@ EXAMPLE: OJ Series in which INSPIRE Directive is published has been assigned the
         </table>
     </div>
     <div class="entity property" id="identificationnumber">
-        <h3>identification number<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>identification number<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#identificationnumber" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1226,13 +1297,15 @@ EXAMPLE: OJ Series in which INSPIRE Directive is published has been assigned the
             <tr>
                 <th>Description</th>
                 <td>
-                    Code used to identify the legislative instrument
+                    <p>EXAMPLE 1: 2007/2/EC is the identification number for the INSPIRE Directive</p>
+<p>EXAMPLE 2: 2008/50/EC is the identification number for the CAFE Directive</p>
+<p>EXAMPLE 3: 2000/60/EC is the identification number for the  Water Framework Directive</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#legislationcitation">common:LegislationCitation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#legislationcitation">legislation citation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1244,7 +1317,9 @@ EXAMPLE: OJ Series in which INSPIRE Directive is published has been assigned the
         </table>
     </div>
     <div class="entity property" id="identifier">
-        <h3>identifier<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>identifier<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#identifier" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1253,7 +1328,7 @@ EXAMPLE: OJ Series in which INSPIRE Directive is published has been assigned the
             <tr>
                 <th>Description</th>
                 <td>
-                    Unique identifier used to identify the spatial object within the specified identification scheme.
+                    <p>Unique identifier used to identify the spatial object within the specified identification scheme.</p>
                 </td>
             </tr>
             <tr>
@@ -1265,7 +1340,9 @@ EXAMPLE: OJ Series in which INSPIRE Directive is published has been assigned the
         </table>
     </div>
     <div class="entity property" id="identifierscheme">
-        <h3>identifier scheme<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>identifier scheme<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#identifierscheme" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1274,11 +1351,8 @@ EXAMPLE: OJ Series in which INSPIRE Directive is published has been assigned the
             <tr>
                 <th>Description</th>
                 <td>
-                    NOTE 1: Reporting requirements for different environmental legislation mandate that each spatial object is assigned an identifier conforming to specific lexical rules. 
-
-
-
-NOTE 2: These rules are often inconsistent so a spatial object may be assigned multiple identifiers which are used for object referencing to link information to the spatial object.
+                    <p>NOTE 1: Reporting requirements for different environmental legislation mandate that each spatial object is assigned an identifier conforming to specific lexical rules. </p>
+<p>NOTE 2: These rules are often inconsistent so a spatial object may be assigned multiple identifiers which are used for object referencing to link information to the spatial object.</p>
                 </td>
             </tr>
             <tr>
@@ -1290,7 +1364,9 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
         </table>
     </div>
     <div class="entity property" id="individualname">
-        <h3>individual name<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>individual name<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#individualname" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1299,13 +1375,13 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
             <tr>
                 <th>Description</th>
                 <td>
-                    Name of the related person.
+                    <p>Name of the related person.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#relatedparty">common:RelatedParty</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#relatedparty">related party</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1317,7 +1393,9 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
         </table>
     </div>
     <div class="entity property" id="linktoonlineversion">
-        <h3>link to online version<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>link to online version<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#linktoonlineversion" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1326,7 +1404,7 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
             <tr>
                 <th>Description</th>
                 <td>
-                    Link to an online version of the document
+                    <p>Link to an online version of the document</p>
                 </td>
             </tr>
             <tr>
@@ -1338,7 +1416,9 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
         </table>
     </div>
     <div class="entity property" id="LoadingDate">
-        <h3>Loading Date<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>Loading Date<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#LoadingDate" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1347,7 +1427,7 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
             <tr>
                 <th>Description</th>
                 <td>
-                    Date of data loaded into national model
+                    <p>Date of data loaded into national model</p>
                 </td>
             </tr>
             <tr>
@@ -1359,7 +1439,7 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1371,7 +1451,9 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
         </table>
     </div>
     <div class="entity property" id="Name">
-        <h3>Name<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>Name<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#Name" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1380,7 +1462,8 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
             <tr>
                 <th>Description</th>
                 <td>
-                    Name of the resource.
+                    <p>NOTE    For legal documents, this should be the official name assigned to the legislative instrument.</p>
+<p>EXAMPLE The official legal name for the INSPIRE Directive is "Directive 2007/2/EC of the European Parliament and of the Council of 14 March 2007 establishing an Infrastructure for Spatial Information in the European Community (INSPIRE)"</p>
                 </td>
             </tr>
             <tr>
@@ -1392,7 +1475,7 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1404,7 +1487,9 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
         </table>
     </div>
     <div class="entity property" id="officialdocumentnumber">
-        <h3>official document number<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>official document number<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#officialdocumentnumber" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1413,11 +1498,8 @@ NOTE 2: These rules are often inconsistent so a spatial object may be assigned m
             <tr>
                 <th>Description</th>
                 <td>
-                    NOTE: An official document number may be assigned to uniquely identify the legislative instrument.
-
-
-
-EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
+                    <p>NOTE: An official document number may be assigned to uniquely identify the legislative instrument.</p>
+<p>EXAMPLE: CELEX Number used to uniquely identify European Union Legislation</p>
                 </td>
             </tr>
             <tr>
@@ -1429,7 +1511,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="officialjournalidentification">
-        <h3>official journal identification<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>official journal identification<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#officialjournalidentification" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1438,7 +1522,12 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    EXAMPLE: Official Journal of European Union (OJEU), L108, Volume 50, 1-14
+                    <p>Reference to the location within the official journal within which the legislative instrument was published. This reference shall be comprised of three parts:
+<ul>
+    <li>the title of the official journal</li>
+    <li>the volume and/or series number</li>
+    <li>Page number(s)</li>
+</ul></p>
                 </td>
             </tr>
             <tr>
@@ -1450,7 +1539,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="organisationname">
-        <h3>organisation name<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>organisation name<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#organisationname" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1459,13 +1550,13 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    Name of the related organisation.
+                    <p>Name of the related organisation.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#relatedparty">common:RelatedParty</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#relatedparty">related party</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1477,7 +1568,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="PlanimetricAccuracy">
-        <h3>Planimetric Accuracy<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>Planimetric Accuracy<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#PlanimetricAccuracy" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1486,13 +1579,13 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    The standard deviation of the horizontal positional accuracy
+                    <p>The standard deviation of the horizontal positional accuracy</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1504,7 +1597,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="positionname">
-        <h3>position name<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>position name<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#positionname" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1513,13 +1608,13 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    Position of the party in relation to a resource, such as head of department.
+                    <p>Position of the party in relation to a resource, such as head of department.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#relatedparty">common:RelatedParty</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#relatedparty">related party</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1531,7 +1626,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="shortname">
-        <h3>short name<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>short name<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#shortname" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1540,7 +1637,7 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    Short name or alternative title of the resource.
+                    <p>Short name or alternative title of the resource.</p>
                 </td>
             </tr>
             <tr>
@@ -1552,7 +1649,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="SourceUFI">
-        <h3>Source UFI<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>Source UFI<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#SourceUFI" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1561,7 +1660,7 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    The unique identifier of the feature as represented in the source 
+                    <p>The unique identifier of the feature as represented in the source </p>
                 </td>
             </tr>
             <tr>
@@ -1573,13 +1672,15 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="specificreference">
-        <h3>specific reference<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>specific reference<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#specificreference" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1588,7 +1689,7 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    EXAMPLE For legal documents, this attribute can contain a reference to article(s) that specify a specific requirement or obligation.
+                    <p>EXAMPLE For legal documents, this attribute can contain a reference to article(s) that specify a specific requirement or obligation.</p>
                 </td>
             </tr>
             <tr>
@@ -1600,7 +1701,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="telephoneFacsimile">
-        <h3>telephoneFacsimile<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>telephoneFacsimile<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#telephoneFacsimile" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1609,13 +1712,13 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    Number of a facsimile machine of the organisation or individual.
+                    <p>Number of a facsimile machine of the organisation or individual.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Contact">common:Contact</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Contact">contact</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1627,7 +1730,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="telephoneVoice">
-        <h3>telephoneVoice<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>telephoneVoice<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#telephoneVoice" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1636,13 +1741,13 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    Telephone number of the organisation or individual.
+                    <p>Telephone number of the organisation or individual.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Contact">common:Contact</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Contact">contact</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1654,7 +1759,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="VerticalAccuracy">
-        <h3>Vertical Accuracy<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>Vertical Accuracy<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#VerticalAccuracy" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1663,13 +1770,13 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    The standard deviation of the vertical positional accuracy
+                    <p>The standard deviation of the vertical positional accuracy</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#FSDFFeature(coreattributes)">common:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FSDFFeature(coreattributes)">FSDF Feature (core attributes)</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -1681,7 +1788,9 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
         </table>
     </div>
     <div class="entity property" id="website">
-        <h3>website<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>website<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#website" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1690,7 +1799,7 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
             <tr>
                 <th>Description</th>
                 <td>
-                    Pages provided on the World Wide Web by the organisation or individual.
+                    <p>Pages provided on the World Wide Web by the organisation or individual.</p>
                 </td>
             </tr>
             <tr>
@@ -1704,19 +1813,13 @@ EXAMPLE: CELEX Number used to uniquely identify European Union Legislation
 </section>
 
   
-  <section id="namedindividuals">
-    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <ul class="hlist">
-    </ul>
-</section>
-  
   <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
+        <dt>default (:)</dt>
+        <dd><code>https://linked.data.gov.au/def/fsdf/common</code></dd>
         <dt>cdt</dt>
         <dd><code>https://w3id.org/cdt/</code></dd>
-        <dt>core</dt>
-        <dd><code>https://linked.data.gov.au/def/fsdf/common#</code></dd>
         <dt>dcterms</dt>
         <dd><code>http://purl.org/dc/terms/</code></dd>
         <dt>ex</dt>
