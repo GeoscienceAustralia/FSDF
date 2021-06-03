@@ -30,7 +30,7 @@ But when it has been set up all the data (i.e. vocabulary terms and relationship
     - some of the namespaces denote pre-existing, external, standard RDF vocabularies - here `dcterms` and `skos`
     - at least one will be for the terms in this vocabulary - here `pt` is mapped to `https://linked.data.gov.au/def/fsdf/place-type/`
     - a namespace URI always ends with a `#` or `/`. The latter is generally preferred for large vocabularies
-    - the actual prefix code (`dcterms`, `skos`, `pt`) is arbitrary, though there are conventions for well-known RDF vocabularies
+    - the actual prefix code (`dcterms`, `skos`, `pt`) is arbitrary, though there are conventions for well-known RDF vocabularies. Note in this instance "pt" refers to place type and is specific to this example only
 - **rows 6-15** here provide metadata for the vocabulary as-a-whole
     - each row is a single item of metadata
     - the rows can be in any order
@@ -72,7 +72,7 @@ The data shown corresponds to the following hierarchy:
 
 The key extras in the advanced examples are 
 1. more external namespaces bound to prefixes, including `sosa` which is a domain-specific vocabulary
-2. elements from multiple namespaces are used in the data structure row - `rdf:type`, `ui:topMemberOf`, `rdfs:label` etc.
+2. elements from multiple namespaces are used in the data structure row (row 25 in this example) - `rdf:type`, `ui:topMemberOf`, `rdfs:label` etc.
 3. not every row is a `skos:Concept`, so an `rdf:type` column is used to assign explicit class(es) for each term - some are `skos:Concept`, some `skos:Collection`, some `sosa:Procedure`, some more than one (comma-separated)
     - in fact SKOS-Play! can be used to manage any RDF data, and does not need to involve SKOS
 4. use of 'inverse' property references - here `^skos:member`. This allows collection-member relations to be captured one at a time, which is much easier to manage than a comma-separated list in the primary direction, which could have dozens or hundreds of items in the context of some vocabularies
