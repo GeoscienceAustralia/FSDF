@@ -1,8 +1,8 @@
-# FSDF feature model
+# FSDF model at feature level
 
-It defines the properties attached to the FSDF features (e.g. facilities, powerlines, power stations)
+FSDF model at feature level defines the properties attached to the FSDF features (e.g. facilities, powerlines, power stations)
 
-The FSDF feature level model has been adapted from the attributes for the FSDF models:
+The FSDF feature level model has been adapted from the attributes of the following datasets:
 
 - [FSDF facilities schema](https://github.com/GeoscienceAustralia/FSDF-Facilities)
 - [FSDF powerinfrastructure schema](https://github.com/GeoscienceAustralia/FSDF-PowerInfrastructure)
