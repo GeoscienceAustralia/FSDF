@@ -11,5 +11,6 @@ See also:
 - [Code repository for earlier work](https://bitbucket.csiro.au/projects/FDSF/repos/fdsf/browse) (inactive since May 2015)
 - [FSDF generic network model](./network.md)
 - [FSDF core feature model](./common.md)
+- [FSDF feature model developed with Surronding Australia](./fsdf_feature.md)
 
 FSDF architecture and components are provided under the [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/) unless otherwise indicated. 
