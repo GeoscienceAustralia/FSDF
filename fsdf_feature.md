@@ -7,6 +7,6 @@ The FSDF feature level model has been adapted from the attributes of the followi
 - [FSDF facilities](https://github.com/GeoscienceAustralia/FSDF-Facilities)
 - [FSDF powerinfrastructure](https://github.com/GeoscienceAustralia/FSDF-PowerInfrastructure)
 
-The mdoel is summarized in this figure: 
+The model is summarized in this figure: 
 
 ![FSDF feature ontology diagram](images/FSDF-Feature-Ontology-diagram.png)
