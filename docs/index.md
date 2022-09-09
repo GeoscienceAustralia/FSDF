@@ -25,11 +25,11 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 <details>
 <summary><b style="font-size:2vw">3. Physical Infrastructure</b></summary>  
 
-- [Powerlines](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_lines)
+- [Powerlines](https://linked.data.gov.au/dataset/power-infrastructure/transmission-lines)
 
-- [Power Stations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_stations)
+- [Power Stations](https://linked.data.gov.au/dataset/power-infrastructure/power-stations)
 
-- [Power Substations](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-power-dataset/power_substations)
+- [Power Substations](https://linked.data.gov.au/dataset/power-infrastructure/power-substations)
 
 - Pipelines (coming later)
 
@@ -66,9 +66,11 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 <details>
 <summary><b style="font-size:2vw">5. Building and Settlement</b></summary>  
 
-- [Hospitals](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-facilities-dataset/medical/)
+- [Education Facilities](https://linked.data.gov.au/dataset/facilities/education)
 
-- [Emergency Management Facilities](http://ec2-13-211-149-56.ap-southeast-2.compute.amazonaws.com/FSDF-facilities-dataset/emergency/)
+- [Medical Facilities](https://linked.data.gov.au/dataset/facilities/medical)
+
+- [Emergency Management Facilities](https://linked.data.gov.au/dataset/facilities/emergency-management)
 </details>
 
 
