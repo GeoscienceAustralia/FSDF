@@ -8,7 +8,7 @@ This repository consists of some of the datasets in the Foundation Base program 
 
 These datasets are categoriezed into different themes. By clicking a dataset name under a theme, its linked data API can be accessed.  
 
-<details>
+(ALT+255)<details>
 <summary><b style="font-size:2vw">1. AusPIX</b></summary>  
 
 - [AusPIX](https://linked.data.gov.au/dataset/auspix)
