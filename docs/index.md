@@ -8,21 +8,21 @@ This repository consists of some of the datasets in the Foundation Base program 
 
 These datasets are categoriezed into different themes. By clicking a dataset name under a theme, its linked data API can be accessed.  
 
-(ALT+255)<details>
+ <details>
 <summary><b style="font-size:2vw">1. AusPIX</b></summary>  
 
 - [AusPIX](https://linked.data.gov.au/dataset/auspix)
 </details>
 
 
-<details>
+ <details>
 <summary><b style="font-size:2vw">2. Place Names</b></summary>  
 
 - [Place Names](https://linked.data.gov.au/dataset/placenames)
 </details>
 
 
-<details>
+ <details>
 <summary><b style="font-size:2vw">3. Physical Infrastructure</b></summary>  
 
 - [Powerlines](https://linked.data.gov.au/dataset/power-infrastructure/transmission-lines)
@@ -40,7 +40,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 </details>
 
 
-<details>
+ <details>
 <summary><b style="font-size:2vw">4. Transport</b>(coming later)</summary>  
 
 - Railways
@@ -63,7 +63,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 </details>
 
 
-<details>
+ <details>
 <summary><b style="font-size:2vw">5. Building and Settlement</b></summary>  
 
 - [Education Facilities](https://linked.data.gov.au/dataset/facilities/education)
@@ -74,7 +74,7 @@ These datasets are categoriezed into different themes. By clicking a dataset nam
 </details>
 
 
-<details>
+ <details>
 <summary><b style="font-size:2vw">6. Elevation</b>(coming later)</summary>  
 
 - ELVIS
